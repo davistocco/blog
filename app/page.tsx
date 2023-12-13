@@ -6,7 +6,7 @@ export default function Home() {
     <main className={styles.main}>
       <Header
         title='DaviStocco.md'
-        summary='Isto é mais ou menos um currículo, aqui escrevo um touco de pudo.'
+        summary='Isso é mais ou menos um currículo, aqui escrevo um pouco de tudo.'
         createdAt='12/12/2023 22:47'
       />
       <h2 id="skills">Skills</h2>
@@ -17,8 +17,8 @@ export default function Home() {
         <li>AWS</li>
       </ul>
       <h2>Posts Recentes</h2>
-        em breve
-      <h2 id="links-teis">Links Úteis</h2>
+      em breve
+      <h2 id="links-uteis">Links Úteis</h2>
       <ul>
         <li><a href="https://www.youtube.com/c/PauloBorgesJR">Paulo Borges Jr</a></li>
         <li><a href="https://refactoring.guru/">Refactoring Guru</a></li>

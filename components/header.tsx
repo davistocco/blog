@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Menu from "./menu";
 
 type Props = {
     title: string;
@@ -9,7 +9,7 @@ type Props = {
 export default function Header({ title, summary, createdAt }: Props) {
     return (
         <header>
-            <p><Link href='/'>DaviStocco</Link> <Link href='/posts'>Posts</Link> <Link href="/projects">Projetos</Link> <Link href="/contact">Contato</Link></p>
+            <Menu/>
             <h1 id="davistocco-md">{title}</h1>
             <p>Created: {createdAt}</p>
             <p><strong>{summary}</strong></p>

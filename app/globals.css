@@ -1,13 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 :root {
+  --background-primary: #222831;
+  --background-secondary: #393E46;
+  --accent-color: #00ADB5;
+  --text-color: #EEEEEE;
+  --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
+    'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
+    'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
   max-width: 720px;
   margin: 0 auto;
   min-height: 100vh;
 }
 
 * {
-  font-family: 'Roboto', sans-serif;
+  font-family: var(--font-mono);
   box-sizing: border-box;
 }
 
@@ -23,10 +30,15 @@ body {
 }
 
 body {
-  color: #EEEEEE;
-  background: #222831;
+  color: var(--text-color);
+  background: var(--background-primary);
 }
 
 a {
-  color: #00ADB5;
+  color: var(--accent-color);
+}
+
+footer {
+  text-align: center;
+  padding: 8px 0;
 }
