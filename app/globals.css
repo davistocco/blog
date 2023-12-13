@@ -38,7 +38,11 @@ a {
   color: var(--accent-color);
 }
 
-footer {
-  text-align: center;
-  padding: 8px 0;
+.flex {
+  display: flex;
+}
+
+.center {
+  align-items: center;
+  justify-content: center;
 }
