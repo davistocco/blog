@@ -1,0 +1,12 @@
+.footer {
+    padding: 20px 0;
+}
+
+.footer ul {
+    list-style-type: none;
+}
+
+.footer p {
+    text-align: center;
+    margin: 0;
+}
