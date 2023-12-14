@@ -21,7 +21,8 @@ export default function Footer() {
                     <li><a href='https://github.com/davistocco'>github</a></li>
                 </ul>
             </div>
-            <p>2023-{currentYear} Davi Stocco</p>
+            <p>2023-{currentYear}</p>
+            <p>by Davi Stocco</p>
         </footer>
     )
 }

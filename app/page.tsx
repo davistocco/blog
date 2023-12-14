@@ -1,4 +1,4 @@
-import Header from '@/components/header';
+import Header from '@/components/header/component';
 import styles from './page.module.css';
 import Readmore from '@/components/readmore/component';
 
@@ -24,7 +24,7 @@ export default function Home() {
         <li><a href="https://www.youtube.com/c/PauloBorgesJR">Paulo Borges Jr</a></li>
         <li><a href="https://refactoring.guru/">Refactoring Guru</a></li>
         <li><a href="https://www.youtube.com/watch?v=18hhUcqX3P8&amp;pp=ygUPZ3VpdGFycmEgaHVtYW5h">Human guitar</a></li>
-        <Readmore href='/links'/>
+        <Readmore href='/links' />
       </ul>
     </main>
   );

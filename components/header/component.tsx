@@ -1,4 +1,5 @@
-import Menu from "./menu";
+import Menu from "../menu";
+import styles from './component.module.css';
 
 type Props = {
     title: string;
@@ -8,7 +9,7 @@ type Props = {
 
 export default function Header({ title, summary, createdAt }: Props) {
     return (
-        <header>
+        <header className={styles.header}>
             <Menu />
             <h1 id="davistocco-md">{title}</h1>
             <p>Created: {createdAt}</p>

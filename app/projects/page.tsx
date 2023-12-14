@@ -1,5 +1,5 @@
 import DateLinkItem from "@/components/date-link-item/component";
-import Header from "@/components/header";
+import Header from "@/components/header/component";
 
 export default function Projects() {
   return (

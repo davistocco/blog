@@ -1,4 +1,4 @@
-import Header from "@/components/header";
+import Header from "@/components/header/component";
 
 export default function Posts() {
   return (
