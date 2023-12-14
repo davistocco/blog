@@ -5,16 +5,17 @@ import styles from './component.module.css';
 
 export default function ThemePicker() {
     const { handleTheme } = useContext(ThemeContext);
+    const themes = ['themeLight', 'themeYellow', 'themeMint', 'themeGreen', 'themePink', 'themeRed', 'themeDark'];
 
     return (
         <div className={styles.themePicker}>
-            <button className='themeLight' onClick={() => handleTheme('themeLight')}></button>
-            <button className='themeYellow' onClick={() => handleTheme('themeYellow')}></button>
-            <button className='themeMint' onClick={() => handleTheme('themeMint')}></button>
-            <button className='themeGreen' onClick={() => handleTheme('themeGreen')}></button>
-            <button className='themePink' onClick={() => handleTheme('themePink')}></button>
-            <button className='themeRed' onClick={() => handleTheme('themeRed')}></button>
-            <button className='themeDark' onClick={() => handleTheme('themeDark')}></button>
+            {themes.map(theme => (
+                <button
+                    key={theme}
+                    className={theme}
+                    onClick={() => handleTheme(theme)}
+                ></button>
+            ))}
         </div>
     );
 }
