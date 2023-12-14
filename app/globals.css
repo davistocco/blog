@@ -37,6 +37,7 @@ body {
   color: var(--text-color);
   background: var(--background-primary);
   margin: 0;
+  padding: 20px;
 }
 
 a {
