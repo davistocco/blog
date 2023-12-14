@@ -13,11 +13,11 @@ export default function Home() {
       <ul>
         <li>Googling</li>
         <li>Pai de Gêmeos</li>
-        <li>Node.js</li>
         <li>AWS</li>
+        <li>Node.js</li>
       </ul>
       <h2>Posts Recentes</h2>
-      em breve
+      ...
       <h2>Referências</h2>
       <ul>
         <li><a href="https://www.youtube.com/c/PauloBorgesJR">Paulo Borges Jr</a></li>
@@ -28,3 +28,4 @@ export default function Home() {
     </main>
   );
 }
+

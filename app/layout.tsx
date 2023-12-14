@@ -1,10 +1,8 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
 import './globals.css'
 import Footer from '@/components/footer/component'
-import LayoutContainer from '@/components/layout-container/component'
-
-const inter = Inter({ subsets: ['latin'] })
+import { cookies } from 'next/headers';
+import LayoutContainer from '@/components/layout-container/component';
 
 export const metadata: Metadata = {
   title: 'Davi Stocco',
@@ -12,14 +10,17 @@ export const metadata: Metadata = {
 }
 
 export default function RootLayout({
-  children,
+  children
 }: {
   children: React.ReactNode
 }) {
+  const cookieStore = cookies();
+  const theme = cookieStore.get('theme');
+
   return (
-    <html lang="en">
-      <body className={`${inter.className}`}>
-        <LayoutContainer>
+    <html lang='en'>
+      <body>
+        <LayoutContainer initialTheme={theme?.value}>
           {children}
           <Footer />
         </LayoutContainer>
