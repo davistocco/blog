@@ -7,10 +7,10 @@ export default function Home() {
     <main className={styles.main}>
       <Header
         title='DaviStocco.md'
-        summary='Isso não é um currículo, aqui escrevo um pouco de tudo.'
+        summary='Isso é quase um currículo, na verdade, aqui escrevo um pouco de tudo.'
         createdAt='12/12/2023 22:47'
       />
-      <h2 id="skills">Skills</h2>
+      <h2>Skills</h2>
       <ul>
         <li>Googling</li>
         <li>Pai de Gêmeos</li>
@@ -19,12 +19,12 @@ export default function Home() {
       </ul>
       <h2>Posts Recentes</h2>
       em breve
-      <h2 id="links-uteis">Links Úteis</h2>
+      <h2>Referências</h2>
       <ul>
         <li><a href="https://www.youtube.com/c/PauloBorgesJR">Paulo Borges Jr</a></li>
-        <li><a href="https://refactoring.guru/">Refactoring Guru</a></li>
-        <li><a href="https://www.youtube.com/watch?v=18hhUcqX3P8&amp;pp=ygUPZ3VpdGFycmEgaHVtYW5h">Human guitar</a></li>
-        <Readmore href='/links' />
+        <li><a href="https://refactoring.guru/">Refactoring.guru</a></li>
+        <li><a href="https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882/ref=sr_1_1?crid=3I3FBMB04EIZM&keywords=clean+code&qid=1702544552&sprefix=clean+co%2Caps%2C390&sr=8-1">Clean Code</a></li>
+        <Readmore href='/references' />
       </ul>
     </main>
   );

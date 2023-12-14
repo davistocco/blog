@@ -30,7 +30,7 @@ export default function Projects() {
         <DateLinkItem
           href="https://lagoinharibeiraopreto.com.br/"
           date={new Date(2022, 6)}
-          text="Site Lagoinha Ribeirão Preto"
+          text="Site Lagoinha Ribeirão"
         />
         <DateLinkItem
           href="https://davistocco.github.io/neomorphic-elements/"
