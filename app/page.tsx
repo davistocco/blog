@@ -13,7 +13,6 @@ export default function Home() {
       <ul>
         <li>Googling</li>
         <li>Pai de Gêmeos</li>
-        <li>AWS</li>
         <li>Node.js</li>
       </ul>
       <h2>Posts Recentes</h2>

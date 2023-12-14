@@ -6,12 +6,12 @@ import { setCookie } from 'nookies';
 
 //TODO: refactor
 
-interface LayoutContainerProps {
+interface LayoutProps {
     children: React.ReactNode;
     initialTheme: string | undefined;
 }
 
-export default function LayoutContainer({ children, initialTheme }: LayoutContainerProps) {
+export default function Layout({ children, initialTheme }: LayoutProps) {
     const defaultTheme = 'themeDark';
     const [theme, setTheme] = useState(initialTheme ?? defaultTheme);
 
