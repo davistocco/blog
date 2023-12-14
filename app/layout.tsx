@@ -3,6 +3,9 @@ import './globals.css'
 import Footer from '@/components/footer/component'
 import { cookies } from 'next/headers';
 import LayoutContainer from '@/components/layout-container/component';
+import { Inter } from 'next/font/google'
+
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'Davi Stocco',
@@ -18,8 +21,8 @@ export default function RootLayout({
   const theme = cookieStore.get('theme');
 
   return (
-    <html lang='en'>
-      <body>
+    <html lang="en">
+      <body className={inter.className}>
         <LayoutContainer initialTheme={theme?.value}>
           {children}
           <Footer />

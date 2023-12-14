@@ -7,6 +7,7 @@ export default function Posts() {
         title='Posts.md'
         createdAt='13/12/2023 13:20'
       />
+      ...
     </main>
   );
 }
