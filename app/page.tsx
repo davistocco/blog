@@ -7,7 +7,7 @@ export default function Home() {
     <main className={styles.main}>
       <Header
         title='DaviStocco.md'
-        summary='Isso é mais ou menos um currículo, aqui escrevo um pouco de tudo.'
+        summary='Isso não é um currículo, aqui escrevo um pouco de tudo.'
         createdAt='12/12/2023 22:47'
       />
       <h2 id="skills">Skills</h2>
@@ -23,7 +23,7 @@ export default function Home() {
       <ul>
         <li><a href="https://www.youtube.com/c/PauloBorgesJR">Paulo Borges Jr</a></li>
         <li><a href="https://refactoring.guru/">Refactoring Guru</a></li>
-        <li><a href="https://www.youtube.com/watch?v=18hhUcqX3P8&amp;pp=ygUPZ3VpdGFycmEgaHVtYW5h">Human Guitar</a></li>
+        <li><a href="https://www.youtube.com/watch?v=18hhUcqX3P8&amp;pp=ygUPZ3VpdGFycmEgaHVtYW5h">Human guitar</a></li>
         <Readmore href='/links'/>
       </ul>
     </main>

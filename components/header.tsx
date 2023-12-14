@@ -9,7 +9,7 @@ type Props = {
 export default function Header({ title, summary, createdAt }: Props) {
     return (
         <header>
-            <Menu/>
+            <Menu />
             <h1 id="davistocco-md">{title}</h1>
             <p>Created: {createdAt}</p>
             <p><strong>{summary}</strong></p>
