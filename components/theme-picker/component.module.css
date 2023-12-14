@@ -1,0 +1,12 @@
+.themePicker {
+    height: 18px;
+    display: inline-block;
+}
+
+.themePicker button {
+    outline: none;
+    height: 100%;
+    width: 18px;
+    border: none;
+    cursor: pointer;
+}

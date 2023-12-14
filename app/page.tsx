@@ -1,10 +1,9 @@
 import Header from '@/components/header/component';
-import styles from './page.module.css';
 import Readmore from '@/components/readmore/component';
 
 export default function Home() {
   return (
-    <main className={styles.main}>
+    <main>
       <Header
         title='DaviStocco.md'
         summary='Isso é quase um currículo, na verdade, aqui escrevo um pouco de tudo.'

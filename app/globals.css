@@ -1,16 +1,58 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 :root {
-  --background-primary: #222831;
-  --background-secondary: #393E46;
-  --accent-color: #00ADB5;
-  --text-color: #EEEEEE;
   --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
     'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
     'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
-  max-width: 720px;
-  margin: 0 auto;
-  min-height: 100vh;
+}
+
+.themeDark {
+  --background-primary: #222831;
+  --accent-color: #00ADB5;
+  --text-color: #EEEEEE;
+  background: #222831;
+}
+
+.themeLight {
+  --background-primary: #FFFFFF;
+  --accent-color: #008080;
+  --text-color: #222831;
+  background: #FFFFFF;
+}
+
+.themeYellow {
+  --background-primary: #FFD369;
+  --accent-color: #006F62;
+  --text-color: #222831;
+  background: #FFD369;
+}
+
+.themeMint {
+  --background-primary: #A3F7BF;
+  --accent-color: #29A19C;
+  --text-color: #27323A;
+  background: #A3F7BF;
+}
+
+.themeGreen {
+  --background-primary: #03C988;
+  --accent-color: #006AA3;
+  --text-color: #13005A;
+  background: #03C988;
+}
+
+.themePink {
+  --background-primary: #F582A7;
+  --accent-color: #00734C;
+  --text-color: #180A0A;
+  background: #F582A7;
+}
+
+.themeRed {
+  --background-primary: #F05941;
+  --accent-color: #872341;
+  --text-color: #22092C;
+  background: #F05941;
 }
 
 * {
@@ -34,14 +76,7 @@ body {
 }
 
 body {
-  color: var(--text-color);
-  background: var(--background-primary);
   margin: 0;
-  padding: 20px;
-}
-
-a {
-  color: var(--accent-color);
 }
 
 .flex {

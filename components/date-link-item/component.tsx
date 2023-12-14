@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import styles from './component.module.css';
 import { capitalize } from 'lodash';
 
 type Props = {
@@ -15,7 +14,7 @@ export default function DateLinkItem({ date, href, text }: Props) {
     );
 
     return (
-        <li className={styles.dateLinkItem}>
+        <li>
             <span>{formattedDate}</span> {href ? <Link href={href}>{text}</Link> : <span>{text}</span>}
         </li>
     )

@@ -1,4 +1,4 @@
-import Menu from "../menu";
+import Menu from "../menu/component";
 import styles from './component.module.css';
 
 type Props = {
