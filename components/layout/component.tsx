@@ -22,11 +22,11 @@ export default function Layout({ children, initialTheme }: LayoutProps) {
 
     return (
         <ThemeContext.Provider value={{ theme, handleTheme }}>
-            <div className={`${styles.container} ${theme}`}>
+            <body className={`${styles.container} ${theme}`}>
                 <div className={styles.limiter}>
                     {children}
                 </div>
-            </div>
+            </body>
         </ThemeContext.Provider>
     );
 }
