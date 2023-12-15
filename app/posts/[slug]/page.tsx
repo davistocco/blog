@@ -1,7 +1,7 @@
 import Header from "@/components/header/component";
 import Markdown from "react-markdown";
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
-import { dracula } from 'react-syntax-highlighter/dist/esm/styles/prism'
+import { vscDarkPlus as dark } from 'react-syntax-highlighter/dist/esm/styles/prism'
 
 export default function Post({ params }: { params: { slug: string } }) {
   const markdown = `
@@ -26,7 +26,7 @@ console.log('Hello, World!');
               <SyntaxHighlighter
                 PreTag="div"
                 language={match[1]}
-                style={dracula}
+                style={dark}
               >
                 {String(children).replace(/\n$/, '')}
               </SyntaxHighlighter>

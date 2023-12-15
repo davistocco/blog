@@ -11,13 +11,3 @@ export async function GET() {
         return NextResponse.json(error, { status: 500 });
     }
 }
-
-// export async function POST(req: Request) {
-//     try {
-//         const data = await req.json();
-//         const post = await prisma.posts.create({ data });
-//         return NextResponse.json(post, { status: 201 });
-//     } catch (error) {
-//         return NextResponse.json(error, { status: 500 });
-//     }
-// }

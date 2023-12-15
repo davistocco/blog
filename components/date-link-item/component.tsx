@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import { capitalize } from 'lodash';
 
 type Props = {
     date: Date;
@@ -11,15 +10,14 @@ type Props = {
 
 export default function DateLinkItem({ date, href, text, showDay }: Props) {
     const dateFormatOptions = (): Intl.DateTimeFormatOptions => {
-        const format: Intl.DateTimeFormatOptions = { year: 'numeric', month: '2-digit' };
+        const format: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'short' };
         if (!showDay) return format;
         return { ...format, day: '2-digit' }
     };
 
-    const formattedDate = capitalize(new Intl
+    const formattedDate = new Intl
         .DateTimeFormat('pt-BR', dateFormatOptions())
-        .format(date)
-    );
+        .format(date);
 
     return (
         <li>

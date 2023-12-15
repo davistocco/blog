@@ -11,8 +11,8 @@ export default function Posts() {
       <ul>
         <DateLinkItem
           href="/posts/hello"
-          date={new Date(2023, 11)}
-          text="Hello"
+          date={new Date(2023, 11, 15)}
+          text="hello"
           showDay={true}
         />
       </ul>

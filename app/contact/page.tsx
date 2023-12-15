@@ -7,6 +7,7 @@ export default function Contact() {
         title='Contato.md'
         createdAt='13/12/2023 20:06'
       />
+      Qualquer coisa me dá um toque 👊
     </main>
   );
 }
