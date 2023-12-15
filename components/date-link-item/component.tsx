@@ -3,13 +3,21 @@ import { capitalize } from 'lodash';
 
 type Props = {
     date: Date;
-    href?: string;
     text: string;
+    href?: string;
+    showDay?: boolean;
 }
 
-export default function DateLinkItem({ date, href, text }: Props) {
+
+export default function DateLinkItem({ date, href, text, showDay }: Props) {
+    const dateFormatOptions = (): Intl.DateTimeFormatOptions => {
+        const format: Intl.DateTimeFormatOptions = { year: 'numeric', month: '2-digit' };
+        if (!showDay) return format;
+        return { ...format, day: '2-digit' }
+    };
+
     const formattedDate = capitalize(new Intl
-        .DateTimeFormat('pt-BR', { year: 'numeric', month: '2-digit' })
+        .DateTimeFormat('pt-BR', dateFormatOptions())
         .format(date)
     );
 
