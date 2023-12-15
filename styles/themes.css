@@ -1,48 +1,34 @@
-.themeDark {
+.dark {
     --background-primary: #222831;
     --accent-color: #00ADB5;
     --text-color: #EEEEEE;
     background: #222831;
 }
 
-.themeLight {
+.light {
     --background-primary: #FFFFFF;
     --accent-color: #008080;
     --text-color: #222831;
     background: #FFFFFF;
 }
 
-.themeYellow {
-    --background-primary: #FFD369;
-    --accent-color: #006F62;
-    --text-color: #222831;
-    background: #FFD369;
+.matrix {
+    --background-primary: #000000;
+    --accent-color: #00FF00;
+    --text-color: #00FF00;
+    background: #000000;
 }
 
-.themeMint {
-    --background-primary: #A3F7BF;
-    --accent-color: #29A19C;
-    --text-color: #27323A;
-    background: #A3F7BF;
+.itIsYourBirthday {
+    --background-primary: #C0C0C0;
+    --accent-color: #000000;
+    --text-color: #A52A2A;
+    background: #C0C0C0;
 }
 
-.themeGreen {
-    --background-primary: #03C988;
-    --accent-color: #006AA3;
-    --text-color: #13005A;
-    background: #03C988;
-}
-
-.themePink {
-    --background-primary: #F582A7;
-    --accent-color: #00734C;
-    --text-color: #180A0A;
-    background: #F582A7;
-}
-
-.themeRed {
-    --background-primary: #F05941;
-    --accent-color: #872341;
-    --text-color: #22092C;
-    background: #F05941;
+.verdao {
+    --background-primary: #00532e;
+    --accent-color: #CDDC39;
+    --text-color: #FFFFFF;
+    background: #00532e;
 }

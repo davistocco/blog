@@ -2,10 +2,11 @@
 import { ThemeContext } from "@/contexts/theme.context";
 import { useContext } from "react";
 import styles from './component.module.css';
+import { Theme } from "@/enums/theme.enum";
 
 export default function ThemePicker() {
     const { handleTheme } = useContext(ThemeContext);
-    const themes = ['themeLight', 'themeYellow', 'themeMint', 'themeGreen', 'themePink', 'themeRed', 'themeDark'];
+    const themes = Object.values(Theme);
 
     return (
         <div className={styles.themePicker}>
