@@ -6,6 +6,7 @@ import _ from 'lodash';
 import { NextResponse } from 'next/server';
 
 const prisma = new PrismaClient();
+
 // TODO: file ext validation
 export async function POST(req: Request) {
     try {
@@ -15,7 +16,6 @@ export async function POST(req: Request) {
         const responseData = exclude(post, ['content'])
         return NextResponse.json(responseData, { status: 201 });
     } catch (error) {
-        console.log(error)
         return NextResponse.json(error, { status: 500 });
     }
 }
