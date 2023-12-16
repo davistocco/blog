@@ -10,14 +10,12 @@ type Props = {
 
 export default function DateLinkItem({ date, href, text, showDay }: Props) {
     const dateFormatOptions = (): Intl.DateTimeFormatOptions => {
-        const format: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'short' };
+        const format: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'short', hour12: false };
         if (!showDay) return format;
         return { ...format, day: '2-digit' }
     };
 
-    const formattedDate = new Intl
-        .DateTimeFormat('pt-BR', dateFormatOptions())
-        .format(date);
+    const formattedDate = date.toLocaleDateString('pt-BR', dateFormatOptions())
 
     return (
         <li>
