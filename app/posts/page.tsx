@@ -3,16 +3,18 @@ import Header from "@/components/header/component";
 import { PrismaClient } from "@prisma/client";
 import { cache } from "react";
 
-export const revalidate = 60;
-const prisma = new PrismaClient();
-const getPosts = cache(async () => {
+export const revalidate = 3600;
+
+// TODO: move to a service
+const getData = cache(async () => {
+  const prisma = new PrismaClient();
   return await prisma.posts.findMany({
     orderBy: { createdAt: 'desc' }
   });
 })
 
 export default async function Posts() {
-  const posts = await getPosts();
+  const posts = await getData();
 
   return (
     <main>
