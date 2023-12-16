@@ -24,6 +24,7 @@ async function prepareData(formData: FormData) {
     const file = formData.get('file') as File;
     const [fileNameWithoutExtension] = file.name.split('.');
     const content = await getFileContent(file);
+    // TODO: use slugify instead
     const slug = _.kebabCase(removeAccents(fileNameWithoutExtension));
     return { title: file.name, slug, content };
 }

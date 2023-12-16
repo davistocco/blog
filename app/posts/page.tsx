@@ -1,20 +1,11 @@
 import DateLinkItem from "@/components/date-link-item/component";
 import Header from "@/components/header/component";
-import { PrismaClient } from "@prisma/client";
-import { cache } from "react";
+import { getPosts } from "@/services/posts.service";
 
 export const revalidate = 3600;
 
-// TODO: move to a service
-const getData = cache(async () => {
-  const prisma = new PrismaClient();
-  return await prisma.posts.findMany({
-    orderBy: { createdAt: 'desc' }
-  });
-})
-
 export default async function Posts() {
-  const posts = await getData();
+  const posts = await getPosts();
 
   return (
     <main>
