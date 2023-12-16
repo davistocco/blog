@@ -1,20 +1,13 @@
 import DateLinkItem from "@/components/date-link-item/component";
 import Header from "@/components/header/component";
-import { PrismaClient } from "@prisma/client";
-import { cache } from "react";
 
-export const revalidate = 3600;
-
-// TODO: move to a service
-const getData = cache(async () => {
-  const prisma = new PrismaClient();
-  return await prisma.posts.findMany({
-    orderBy: { createdAt: 'desc' }
-  });
-})
+async function getPosts() {
+  const res = await fetch('https://davistocco.vercel.app/api/posts', { next: { revalidate: 120 } })
+  return await res.json()
+}
 
 export default async function Posts() {
-  const posts = await getData();
+  const posts = await getPosts();
 
   return (
     <main>
@@ -24,11 +17,11 @@ export default async function Posts() {
       />
       <ul>
         {
-          posts.map(post => (
+          posts.map((post: any) => (
             <DateLinkItem
               key={post.slug}
               href={`/posts/${post.slug}`}
-              date={post.createdAt}
+              date={new Date(post.createdAt)}
               text={post.title}
               showDay={true}
             />

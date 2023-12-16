@@ -1,22 +1,23 @@
 import Header from "@/components/header/component";
+import { getPostBySlug, getPosts } from "@/services/posts.service";
 import Markdown from "react-markdown";
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { vscDarkPlus as dark } from 'react-syntax-highlighter/dist/esm/styles/prism'
 
-export default function Post({ params }: { params: { slug: string } }) {
-  const markdown = `
-~~~js
-console.log('Hello, World!');
-~~~
-## Referências
-1. 
-`;
+export const dynamicParams = true;
+export const revalidate = 3600;
+
+export async function generateStaticParams() {
+  const posts = await getPosts();
+  return posts.map((post) => ({ slug: post.slug }));
+}
+
+export default async function Post({ params }: { params: { slug: string } }) {
+  const post = await getPostBySlug(params.slug);
+
   return (
     <main>
-      <Header
-        title={params.slug}
-        createdAt='15/12/2023 11:08'
-      />
+      <Header />
       <Markdown
         components={{
           code(props) {
@@ -38,7 +39,7 @@ console.log('Hello, World!');
           }
         }}
       >
-        {markdown}
+        {post.content}
       </Markdown>
     </main>
   );
