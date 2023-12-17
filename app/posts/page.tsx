@@ -1,7 +1,9 @@
 import DateLinkItem from "@/components/date-link-item/component";
 import Header from "@/components/header/component";
 import { getPosts } from "@/services/posts.service";
+import { Metadata } from "next";
 
+export const metadata: Metadata = { title: 'Posts - Davi Stocco' };
 export const dynamic = 'force-static';
 export const revalidate = 3600;
 

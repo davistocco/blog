@@ -8,6 +8,10 @@ import styles from './page.module.css';
 
 // TODO: enhance markdown feature support
 
+type Props = {
+  params: { slug: string }
+}
+
 export const dynamic = 'force-static';
 export const dynamicParams = true;
 export const revalidate = false;
@@ -17,7 +21,14 @@ export async function generateStaticParams() {
   return posts.map((post) => ({ slug: post.slug }));
 }
 
-export default async function Post({ params }: { params: { slug: string } }) {
+export async function generateMetadata({ params }: Props) {
+  const post = await getPostBySlug(params.slug);
+  return {
+    title: `${post.title} - Davi Stocco`,
+  }
+}
+
+export default async function Post({ params }: Props) {
   const post = await getPostBySlug(params.slug);
 
   return (

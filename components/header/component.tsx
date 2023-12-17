@@ -4,11 +4,10 @@ import styles from './component.module.css';
 type Props = {
     title?: string;
     caption?: string;
-    summary?: string;
     createdAt?: string;
 }
 
-export default function Header({ title, caption, summary, createdAt }: Props) {
+export default function Header({ title, caption, createdAt }: Props) {
     return (
         <header className={styles.header}>
             <Menu />
@@ -17,6 +16,5 @@ export default function Header({ title, caption, summary, createdAt }: Props) {
             {
                 createdAt && <p>Criado: {createdAt}</p>
             }
-            <p><strong>{summary}</strong></p>
         </header>)
 }

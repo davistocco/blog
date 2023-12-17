@@ -13,16 +13,10 @@ export default async function Home() {
     <main>
       <Header
         title='DaviStocco.md'
-        caption='software developer'
-        summary='Isso é quase um currículo, na verdade, aqui escrevo um pouco de tudo.'
+        caption='node developer/software engineer'
         createdAt='12/12/2023 22:47'
       />
-      <h2>Skills</h2>
-      <ul>
-        <li>Googling</li>
-        <li>Pai de Gêmeos</li>
-        <li>Node.js</li>
-      </ul>
+      <p><strong>Isso é tipo um currículo, na verdade, aqui escrevo um pouco de tudo.</strong></p>
       <h2>Posts Recentes</h2>
       <ul>
         {
@@ -37,6 +31,12 @@ export default async function Home() {
           ))
         }
         <Readmore href='/posts' />
+      </ul>
+      <h2>Skills</h2>
+      <ul>
+        <li>Googling</li>
+        <li>Pai de Gêmeos</li>
+        <li>Node.js</li>
       </ul>
       <h2>Referências</h2>
       <ul>

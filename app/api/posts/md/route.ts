@@ -8,6 +8,7 @@ import { NextResponse } from 'next/server';
 const prisma = new PrismaClient();
 
 // TODO: file ext validation
+// TODO: authentication
 export async function POST(req: Request) {
     try {
         const formData = await req.formData();

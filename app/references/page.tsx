@@ -1,5 +1,7 @@
 import Header from "@/components/header/component";
+import { Metadata } from "next";
 
+export const metadata: Metadata = { title: 'Referências - Davi Stocco' };
 export const dynamic = 'force-static';
 
 export default function References() {

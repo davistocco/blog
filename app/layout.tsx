@@ -8,6 +8,7 @@ export const metadata: Metadata = {
 }
 
 // TODO: internationalization
+// TODO: prettier
 
 export default function RootLayout({
   children
