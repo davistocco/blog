@@ -16,11 +16,11 @@ export default async function Posts() {
       />
       <ul>
         {
-          posts.map((post: any) => (
+          posts.map(post => (
             <DateLinkItem
               key={post.slug}
               href={`/posts/${post.slug}`}
-              date={new Date(post.createdAt)}
+              date={post.createdAt}
               text={post.title}
               showDay={true}
             />
