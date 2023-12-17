@@ -13,7 +13,7 @@ export default async function Home() {
     <main>
       <Header
         title='DaviStocco.md'
-        caption='node developer/software engineer'
+        caption='backend dev/software engineer'
         createdAt='12/12/2023 22:47'
       />
       <p><strong>Isso é tipo um currículo, na verdade, aqui escrevo um pouco de tudo.</strong></p>
