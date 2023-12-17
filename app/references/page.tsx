@@ -9,8 +9,8 @@ export default function References() {
       />
       <h2>Links Úteis</h2>
       <ul>
-        <li><a href="https://www.youtube.com/c/PauloBorgesJR">Paulo Borges Jr</a></li>
         <li><a href="https://refactoring.guru/">Refactoring.guru</a></li>
+        <li><a href="https://www.youtube.com/c/PauloBorgesJR">Paulo Borges Jr</a></li>
       </ul>
       <h2>Livros</h2>
       <ul>

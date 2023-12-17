@@ -1,8 +1,10 @@
 import Header from "@/components/header/component";
 import { getPostBySlug, getPosts } from "@/services/posts.service";
 import Markdown from "react-markdown";
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
-import { vscDarkPlus as dark } from 'react-syntax-highlighter/dist/esm/styles/prism'
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { vscDarkPlus as dark } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import gfm from 'remark-gfm';
+import styles from './page.module.css';
 
 export const dynamic = 'force-static';
 export const dynamicParams = true;
@@ -17,9 +19,10 @@ export default async function Post({ params }: { params: { slug: string } }) {
   const post = await getPostBySlug(params.slug);
 
   return (
-    <main>
+    <main className={styles.tableContainer}>
       <Header />
       <Markdown
+        remarkPlugins={[gfm]}
         components={{
           code(props) {
             const { children, className, node, ...rest } = props

@@ -14,7 +14,7 @@
 
 ul {
   padding-left: 20px;
-  list-style-type: circle;
+  list-style-type: disc;
 }
 
 html {
@@ -39,4 +39,28 @@ body {
 .center {
   align-items: center;
   justify-content: center;
+}
+
+.table-container {
+  height: 400px;
+  width: 400px;
+  margin: 0 auto;
+}
+
+table img {
+  width: 50%;
+  height: 100%;
+  object-fit: cover;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+
+}
+
+th,
+td {
+  border: 1px solid #ccc;
+  padding: 5px;
 }
