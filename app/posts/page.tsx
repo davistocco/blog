@@ -1,6 +1,8 @@
 import DateLinkItem from "@/components/date-link-item/component";
 import Header from "@/components/header/component";
 
+export const dynamic = "force-static"
+
 async function getPosts() {
   const res = await fetch('https://davistocco.vercel.app/api/posts', { next: { revalidate: 120 } })
   return await res.json()
