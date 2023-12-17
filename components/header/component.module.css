@@ -1,1 +1,6 @@
-.header {}
+.caption {
+    position: absolute;
+    font-size: 12px;
+    margin-top: -28px;
+    font-weight: normal;
+}

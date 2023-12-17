@@ -7,6 +7,8 @@ export const metadata: Metadata = {
   description: 'Site do Davi',
 }
 
+// TODO: internationalization
+
 export default function RootLayout({
   children
 }: {
