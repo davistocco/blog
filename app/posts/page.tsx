@@ -2,8 +2,6 @@ import DateLinkItem from "@/components/date-link-item/component";
 import Header from "@/components/header/component";
 import { getPosts } from "@/services/posts.service";
 
-// FIXME: static page resetting theme 
-
 export const dynamic = 'force-static';
 export const revalidate = 60;
 

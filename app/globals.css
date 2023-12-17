@@ -1,10 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-@import '../styles/themes.css';
 
 :root {
   --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
     'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
     'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
+  --background-primary: #222831;
+  --accent-color: #00ADB5;
+  --text-color: #EEEEEE;
 }
 
 * {
@@ -29,22 +31,14 @@ body {
 
 body {
   margin: 0;
+  padding: 20px;
+  min-height: 100vh;
   background: var(--background-primary);
+  color: var(--text-color);
 }
 
-.flex {
-  display: flex;
-}
-
-.center {
-  align-items: center;
-  justify-content: center;
-}
-
-.table-container {
-  height: 400px;
-  width: 400px;
-  margin: 0 auto;
+a {
+  color: var(--accent-color);
 }
 
 table img {
@@ -63,4 +57,24 @@ th,
 td {
   border: 1px solid #ccc;
   padding: 5px;
+}
+
+.wrapper {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.flex {
+  display: flex;
+}
+
+.center {
+  align-items: center;
+  justify-content: center;
+}
+
+.table-container {
+  height: 400px;
+  width: 400px;
+  margin: 0 auto;
 }
