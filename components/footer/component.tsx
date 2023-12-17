@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import styles from './component.module.css';
+import Link from 'next/link';
 
 export default function Footer() {
     const currentYear = new Date().getFullYear();
@@ -8,6 +9,7 @@ export default function Footer() {
         <footer className={styles.footer}>
             <div className='flex center'>
                 <Image
+                    className={styles.profileImage}
                     src='/images/very-young-davi.png'
                     width='60'
                     height='60'
@@ -22,7 +24,7 @@ export default function Footer() {
                 </ul>
             </div>
             <p>2023-{currentYear}</p>
-            <p>by Davi Stocco</p>
+            <p>by <Link href='/'>Davi Stocco</Link></p>
         </footer>
     )
 }
