@@ -1,6 +1,8 @@
 import DateLinkItem from "@/components/date-link-item/component";
 import Header from "@/components/header/component";
 
+export const dynamic = 'force-static';
+
 export default function Projects() {
   return (
     <main>

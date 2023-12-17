@@ -10,7 +10,7 @@ type Props = {
 
 export default function DateLinkItem({ date, href, text, showDay }: Props) {
     const dateFormatOptions = (): Intl.DateTimeFormatOptions => {
-        const format: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'short', hour12: false };
+        const format: Intl.DateTimeFormatOptions = { year: 'numeric', month: '2-digit' };
         if (!showDay) return format;
         return { ...format, day: '2-digit' }
     };

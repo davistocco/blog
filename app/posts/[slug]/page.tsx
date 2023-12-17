@@ -6,6 +6,8 @@ import { vscDarkPlus as dark } from 'react-syntax-highlighter/dist/esm/styles/pr
 import gfm from 'remark-gfm';
 import styles from './page.module.css';
 
+// TODO: enhance markdown feature support
+
 export const dynamic = 'force-static';
 export const dynamicParams = true;
 export const revalidate = false;

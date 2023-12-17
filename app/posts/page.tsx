@@ -3,7 +3,7 @@ import Header from "@/components/header/component";
 import { getPosts } from "@/services/posts.service";
 
 export const dynamic = 'force-static';
-export const revalidate = 60;
+export const revalidate = 3600;
 
 export default async function Posts() {
   const posts = await getPosts();

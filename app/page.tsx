@@ -1,6 +1,9 @@
 import Header from '@/components/header/component';
 import Readmore from '@/components/readmore/component';
 
+export const dynamic = 'force-static';
+export const revalidate = 3600;
+
 export default function Home() {
   return (
     <main>
