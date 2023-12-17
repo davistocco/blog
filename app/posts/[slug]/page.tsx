@@ -4,8 +4,9 @@ import Markdown from "react-markdown";
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { vscDarkPlus as dark } from 'react-syntax-highlighter/dist/esm/styles/prism'
 
+export const dynamic = 'force-static';
 export const dynamicParams = true;
-export const revalidate = 3600;
+export const revalidate = false;
 
 export async function generateStaticParams() {
   const posts = await getPosts();

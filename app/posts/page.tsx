@@ -2,7 +2,8 @@ import DateLinkItem from "@/components/date-link-item/component";
 import Header from "@/components/header/component";
 import { getPosts } from "@/services/posts.service";
 
-export const revalidate = 3600;
+export const dynamic = 'force-static';
+export const revalidate = 60;
 
 export default async function Posts() {
   const posts = await getPosts();
@@ -15,11 +16,11 @@ export default async function Posts() {
       />
       <ul>
         {
-          posts.map(post => (
+          posts.map((post: any) => (
             <DateLinkItem
               key={post.slug}
               href={`/posts/${post.slug}`}
-              date={post.createdAt}
+              date={new Date(post.createdAt)}
               text={post.title}
               showDay={true}
             />
