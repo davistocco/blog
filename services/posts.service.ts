@@ -18,7 +18,7 @@ export const getPosts = cache(async () => {
 
 export const getPostBySlug = cache(async (slug: string) => {
     const prisma = new PrismaClient();
-    return await prisma.posts.findUniqueOrThrow({
+    return await prisma.posts.findUnique({
         where: { slug }
     })
 });

@@ -5,6 +5,7 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { vscDarkPlus as dark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import gfm from 'remark-gfm';
 import styles from './page.module.css';
+import { notFound } from "next/navigation";
 
 // TODO: enhance markdown feature support
 
@@ -23,13 +24,15 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props) {
   const post = await getPostBySlug(params.slug);
+  if (!post) return;
   return {
-    title: `${post.title} - Davi Stocco`,
+    title: `${post.title.replace('.md', '')} - Davi Stocco`,
   }
 }
 
 export default async function Post({ params }: Props) {
   const post = await getPostBySlug(params.slug);
+  if (!post) return notFound();
 
   return (
     <main className={styles.tableContainer}>
