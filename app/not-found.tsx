@@ -1,5 +1,7 @@
 import Image from 'next/image';
 
+export const dynamic = 'force-static';
+
 export default async function NotFound() {
     return (
         <div style={{ textAlign: 'center' }}>
