@@ -1,9 +1,10 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import Footer from '@/components/footer/component'
-import { Lusitana } from 'next/font/google';
+import { Inter, Lusitana } from 'next/font/google';
 
-const lusitana = Lusitana({ subsets: ['latin'], weight: '400' });
+const inter = Inter({ subsets: ['latin'] });
+const lusitana = Lusitana({ subsets: ['latin'], weight: ['400', '700'] });
 
 export const metadata: Metadata = {
   title: 'Davi Stocco',
