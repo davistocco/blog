@@ -1,0 +1,9 @@
+.mmyy {
+    display: inline-block;
+    min-width: 60px;
+}
+
+.ddmmyy {
+    display: inline-block;
+    min-width: 80px;
+}
