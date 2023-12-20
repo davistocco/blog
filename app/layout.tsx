@@ -3,7 +3,7 @@ import './globals.css'
 import Footer from '@/components/footer/component'
 import { Fira_Mono } from 'next/font/google';
 
-const font = Fira_Mono({ weight: ['400'], subsets: ['latin'] });
+const font = Fira_Mono({ weight: ['400', '500', '700'], subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: {
