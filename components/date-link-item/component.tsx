@@ -20,7 +20,7 @@ export default function DateLinkItem({ date, href, text, showDay }: Props) {
 
     return (
         <li>
-            <span className={showDay ? styles.ddmmyy : styles.mmyy}>{formattedDate}</span> {href ? <Link href={href}>{text}</Link> : <span>{text}</span>}
+            <span>{formattedDate}</span> {href ? <Link href={href}>{text}</Link> : <span>{text}</span>}
         </li>
     )
 }

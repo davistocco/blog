@@ -8,9 +8,11 @@ import { NextResponse } from 'next/server';
 const prisma = new PrismaClient();
 
 // TODO: file ext validation
-// TODO: authentication
 export async function POST(req: Request) {
     try {
+        if (req.headers.get('token') !== process.env.TOKEN) {
+            return NextResponse.json({ message: 'Unauthorized' }, { status: 401 });
+        }
         const formData = await req.formData();
         const data = await prepareData(formData);
         const post = await prisma.posts.create({ data });

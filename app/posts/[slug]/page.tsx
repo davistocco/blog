@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: Props) {
   const post = await getPostBySlug(params.slug);
   if (!post) return;
   return {
-    title: `${post.title.replace('.md', '')} - Davi Stocco`,
+    title: post.title.replace('.md', ''),
   }
 }
 

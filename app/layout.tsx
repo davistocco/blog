@@ -6,7 +6,10 @@ import { Fira_Mono } from 'next/font/google';
 const font = Fira_Mono({ weight: ['400'], subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Davi Stocco',
+  title: {
+    template: '%s | Davi Stocco',
+    default: 'Davi Stocco'
+  },
   description: 'Site do Davi',
 }
 

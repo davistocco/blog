@@ -2,7 +2,7 @@ import DateLinkItem from "@/components/date-link-item/component";
 import Header from "@/components/header/component";
 import { Metadata } from "next";
 
-export const metadata: Metadata = { title: 'Projetos - Davi Stocco' };
+export const metadata: Metadata = { title: 'Projetos' };
 export const dynamic = 'force-static';
 
 export default function Projects() {

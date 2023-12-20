@@ -1,7 +1,7 @@
 import Header from "@/components/header/component";
 import { Metadata } from "next";
 
-export const metadata: Metadata = { title: 'Contato - Davi Stocco' };
+export const metadata: Metadata = { title: 'Contato' };
 export const dynamic = 'force-static';
 
 export default function Contact() {
