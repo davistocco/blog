@@ -1,10 +1,9 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import Footer from '@/components/footer/component'
-import { Inter, Lusitana } from 'next/font/google';
+import { Fira_Mono } from 'next/font/google';
 
-const inter = Inter({ subsets: ['latin'] });
-const lusitana = Lusitana({ subsets: ['latin'], weight: ['400', '700'] });
+const font = Fira_Mono({ weight: ['400'], subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'Davi Stocco',
@@ -21,7 +20,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${lusitana.className} antialiased`}>
+      <body className={`${font.className} antialiased`}>
         <div className='wrapper'>
           {children}
           <Footer />
