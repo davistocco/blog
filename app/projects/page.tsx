@@ -6,6 +6,37 @@ export const metadata: Metadata = { title: 'Projetos' };
 export const dynamic = 'force-static';
 
 export default function Projects() {
+  const projects = [
+    {
+      title: 'Este blog',
+      createdAt: new Date(2023, 11),
+      href: 'https://github.com/davistocco/blog',
+    },
+    {
+      title: 'LucianoApp',
+      createdAt: new Date(2023, 10),
+      href: 'https://www.linkedin.com/feed/update/urn:li:activity:7127796860991254528/',
+    },
+    {
+      title: 'Tryst',
+      createdAt: new Date(2023, 5),
+    },
+    {
+      title: 'Bot Nota Control',
+      createdAt: new Date(2023, 5),
+      href: 'https://www.linkedin.com/feed/update/urn:li:activity:7080650800078761984/',
+    },
+    {
+      title: 'Site Lagoinha Ribeirão',
+      createdAt: new Date(2022, 6),
+      href: 'https://lagoinharibeiraopreto.com.br/',
+    },
+    {
+      title: 'Neomorphic Elements',
+      createdAt: new Date(2022, 4),
+      href: 'https://davistocco.github.io/neomorphic-elements/',
+    },
+  ]
   return (
     <main>
       <Header
@@ -13,34 +44,16 @@ export default function Projects() {
         createdAt='13/12/2023 13:21'
       />
       <ul>
-        <DateLinkItem
-          href="https://github.com/davistocco/blog"
-          date={new Date(2023, 11)}
-          text="Este blog"
-        />
-        <DateLinkItem
-          date={new Date(2023, 5)}
-          text="Tryst"
-        /> <DateLinkItem
-          href="https://www.linkedin.com/feed/update/urn:li:activity:7080650800078761984/"
-          date={new Date(2023, 5)}
-          text="Bot Nota Control"
-        />
-        <DateLinkItem
-          href="https://www.linkedin.com/feed/update/urn:li:activity:7127796860991254528/"
-          date={new Date(2022, 10)}
-          text="LucianoApp"
-        />
-        <DateLinkItem
-          href="https://lagoinharibeiraopreto.com.br/"
-          date={new Date(2022, 6)}
-          text="Site Lagoinha Ribeirão"
-        />
-        <DateLinkItem
-          href="https://davistocco.github.io/neomorphic-elements/"
-          date={new Date(2022, 4)}
-          text="Neomorphic Elements"
-        />
+        {
+          projects.map(project => (
+            <DateLinkItem
+              key={project.title}
+              href={project.href}
+              date={project.createdAt}
+              text={project.title}
+            />
+          ))
+        }
       </ul>
     </main>
   );
