@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import './globals.css'
 import Footer from '@/components/footer/component'
 import { Fira_Mono } from 'next/font/google';
+import { Analytics } from '@vercel/analytics/react';
 
 const font = Fira_Mono({ weight: ['400', '500', '700'], subsets: ['latin'] });
 
@@ -27,6 +28,7 @@ export default function RootLayout({
         <div className='wrapper'>
           {children}
           <Footer />
+          <Analytics />
         </div>
       </body>
     </html >
