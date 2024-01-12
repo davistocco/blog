@@ -20,6 +20,7 @@ export default function Projects() {
     {
       title: 'Tryst',
       createdAt: new Date(2023, 5),
+      href: 'https://tryst.com.br/',
     },
     {
       title: 'Bot Nota Control',
