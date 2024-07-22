@@ -1,5 +1,5 @@
 import Header from "@/components/header/component";
-import { getPostBySlug, getPosts } from "@/services/posts.service";
+import { getPostBySlug, getPostContent, getPosts, getPostSlug } from "@/services/posts.service";
 import Markdown from "react-markdown";
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { vscDarkPlus as dark } from 'react-syntax-highlighter/dist/esm/styles/prism';
@@ -19,7 +19,7 @@ export const revalidate = false;
 
 export async function generateStaticParams() {
   const posts = await getPosts();
-  return posts.map((post) => ({ slug: post.slug }));
+  return posts.map((post) => ({ slug: getPostSlug(post.title) }));
 }
 
 export async function generateMetadata({ params }: Props) {
@@ -33,6 +33,8 @@ export async function generateMetadata({ params }: Props) {
 export default async function Post({ params }: Props) {
   const post = await getPostBySlug(params.slug);
   if (!post) return notFound();
+
+  const postContent = await getPostContent(post.title);
 
   return (
     <main className={styles.tableContainer}>
@@ -59,7 +61,7 @@ export default async function Post({ params }: Props) {
           }
         }}
       >
-        {post.content}
+        {postContent}
       </Markdown>
     </main>
   );

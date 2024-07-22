@@ -1,6 +1,6 @@
 import DateLinkItem from "@/components/date-link-item/component";
 import Header from "@/components/header/component";
-import { getPosts } from "@/services/posts.service";
+import { getPosts, getPostSlug } from "@/services/posts.service";
 import { Metadata } from "next";
 
 export const metadata: Metadata = { title: 'Posts' };
@@ -11,17 +11,17 @@ export default async function Posts() {
   const posts = await getPosts();
 
   return (
-    < main >
+    <main>
       <Header
         title='Posts.md'
         createdAt='13/12/2023 13:20'
       />
       <ul>
         {
-          posts.map(post => (
+          posts.map((post, index) => (
             <DateLinkItem
-              key={post.slug}
-              href={`/posts/${post.slug}`}
+              key={index}
+              href={`/posts/${getPostSlug(post.title)}`}
               date={post.createdAt}
               text={post.title}
               showDay={true}
@@ -29,6 +29,6 @@ export default async function Posts() {
           ))
         }
       </ul>
-    </main >
+    </main>
   );
 }
