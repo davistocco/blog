@@ -15,6 +15,4 @@ Desde então, tento encarar tudo que acontece na vida, seja bom ou ruim, de form
 
 Enfim, o Tomas está em casa há 3 meses, perto do irmãozinho e recebendo muito carinho. Eu não iria escrever sobre isso aqui, mas como estou me despedindo da **Krykto**, precisei contextualizar, para agradecer publicamente as amizades que pude fazer e por marcarem essa fase com todo apoio que me deram, do nascimento aos dias de hoje, e por permitir momentos como esse, em que pude trabalhar ao lado do meu guerreiro.
 
-![alt text](image.png)
-
 Obrigado a todos, e até a próxima! ❤️
