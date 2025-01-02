@@ -10,7 +10,7 @@ export default function Projects() {
     {
       title: 'Este blog',
       createdAt: new Date(2023, 11),
-      href: 'https://github.com/davistocco/blog',
+      href: '',
     },
     {
       title: 'LucianoApp',
