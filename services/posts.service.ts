@@ -15,6 +15,10 @@ const posts: Array<Post> = [
     {
         title: 'Breve Relato De Um Pai.md',
         createdAt: new Date(2024, 6, 21)
+    },
+    {
+        title: 'Bistrô Dogueria: Uma Análise Contemplativa.md',
+        createdAt: new Date(2025, 0, 3)
     }
 ]
 
