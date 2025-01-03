@@ -17,7 +17,7 @@ const posts: Array<Post> = [
         createdAt: new Date(2024, 6, 21)
     },
     {
-        title: 'Bistrô Dogueria: Uma Análise Contemplativa.md',
+        title: 'Bistrô Dogueria - Uma Análise Contemplativa.md',
         createdAt: new Date(2025, 0, 3)
     }
 ]

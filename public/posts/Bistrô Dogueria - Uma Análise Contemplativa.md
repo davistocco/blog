@@ -1,4 +1,4 @@
-# Bistrô Dogueria: Uma Análise Contemplativa
+# Bistrô Dogueria - Uma Análise Contemplativa
 Criado: 03/01/2025 00:48
 
 **Ribeirão Preto, 3 de janeiro de 2025.**  
