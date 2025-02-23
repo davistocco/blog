@@ -11,7 +11,7 @@ export default async function NotFound() {
                     src='/images/not-found.gif'
                     layout='fill'
                     objectFit='contain'
-                    alt='very young davi'
+                    alt='confused travolta'
                 />
             </Link>
         </div>
