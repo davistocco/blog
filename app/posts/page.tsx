@@ -13,7 +13,7 @@ export default async function Posts() {
   return (
     <main>
       <Header
-        title='Posts.md'
+        title='Posts'
         createdAt='13/12/2023 13:20'
       />
       <ul>

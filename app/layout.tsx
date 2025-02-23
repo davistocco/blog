@@ -1,10 +1,10 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import Footer from '@/components/footer/component'
-import { Fira_Mono } from 'next/font/google';
+import { IBM_Plex_Mono } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/react';
 
-const font = Fira_Mono({ weight: ['400', '500', '700'], subsets: ['latin'] });
+const font = IBM_Plex_Mono({ weight: ['400', '500', '700'], subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: {

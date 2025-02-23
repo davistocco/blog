@@ -9,15 +9,15 @@ type Post = {
 
 const posts: Array<Post> = [
     {
-        title: 'Gerando Handlers com OpenAI Function Calling e NodeJS.md',
+        title: 'Gerando Handlers com OpenAI Function Calling e NodeJS',
         createdAt: new Date(2024, 0, 10)
     },
     {
-        title: 'Breve Relato De Um Pai.md',
+        title: 'Breve Relato de Um Pai',
         createdAt: new Date(2024, 6, 21)
     },
     {
-        title: 'Bistrô Dogueria - Uma Análise Contemplativa.md',
+        title: 'Bistrô Dogueria - Uma Análise Contemplativa',
         createdAt: new Date(2025, 0, 3)
     }
 ]
@@ -36,11 +36,11 @@ export const getPostBySlug = cache(async (slug: string) => {
 });
 
 export async function getPostContent(title: string) {
-    const fullPath = process.cwd() + '/public/posts/' + title;
+    const fullPath = `${process.cwd()}/public/posts/${title}.md`;
     const fileContents = fs.readFileSync(fullPath, 'utf8');
     return fileContents;
 }
 
 export const getPostSlug = (title: string) => {
-    return slugify(title, { lower: true }).split('.md')[0];
+    return slugify(title, { lower: true });
 }

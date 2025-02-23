@@ -41,7 +41,7 @@ export default function Projects() {
   return (
     <main>
       <Header
-        title='Projetos.md'
+        title='Projetos'
         createdAt='13/12/2023 13:21'
       />
       <ul>

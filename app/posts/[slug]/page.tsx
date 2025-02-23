@@ -25,9 +25,7 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props) {
   const post = await getPostBySlug(params.slug);
   if (!post) return;
-  return {
-    title: post.title.replace('.md', ''),
-  }
+  return { title: post.title };
 }
 
 export default async function Post({ params }: Props) {

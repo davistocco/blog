@@ -8,7 +8,7 @@ export default function Contact() {
   return (
     <main>
       <Header
-        title='Contato.md'
+        title='Contato'
         createdAt='13/12/2023 20:06'
       />
       Qualquer coisa me dá um toque 👊
