@@ -3,12 +3,13 @@ import { Metadata } from "next";
 import Image from 'next/image';
 import fs from 'fs';
 import styles from './page.module.css';
+import { shuffleArray } from "@/utils/array.utils";
 
 export const metadata: Metadata = { title: 'Gifs' };
 export const dynamic = 'force-static';
 
 export default function Gifs() {
-  const gifFileNames = fs.readdirSync(`${process.cwd()}/public/gifs-page`);
+  const gifFileNames = shuffleArray(fs.readdirSync(`${process.cwd()}/public/gifs-page`));
 
   return (
     <main>
