@@ -14,7 +14,6 @@ export default async function Home() {
       <Header
         title='DaviStocco'
         caption='software developer'
-        createdAt='12/12/2023 22:47'
       />
       <h2>Posts Recentes</h2>
       <ul>

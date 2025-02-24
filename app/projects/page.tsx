@@ -42,7 +42,6 @@ export default function Projects() {
     <main>
       <Header
         title='Projetos'
-        createdAt='13/12/2023 13:21'
       />
       <ul>
         {

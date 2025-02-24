@@ -14,7 +14,6 @@ export default async function Posts() {
     <main>
       <Header
         title='Posts'
-        createdAt='13/12/2023 13:20'
       />
       <ul>
         {

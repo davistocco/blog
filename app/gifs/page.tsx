@@ -12,7 +12,7 @@ export default function Gifs() {
 
   return (
     <main>
-      <Header title="Gifs" createdAt="23/02/2025 12:47" />
+      <Header title="Gifs" />
       <div className={`gifsContainer ${styles.gifsContainer}`}>
         {gifFileNames.map((gif, index) => (
           <Image
