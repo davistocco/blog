@@ -13,4 +13,5 @@
 
 .profileImage {
     width: 60px;
+    border-radius: 3px;
 }
