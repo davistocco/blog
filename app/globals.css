@@ -98,12 +98,12 @@ body {
 
 a {
   color: var(--accent-color);
-  text-decoration: none
+  /* text-decoration: none */
 }
 
-a:hover {
+/* a:hover {
   text-decoration: underline;
-}
+} */
 
 img {
   width: 100%;
