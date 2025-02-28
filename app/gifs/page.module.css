@@ -11,3 +11,15 @@
     border-radius: 4px;
     cursor: pointer;
 }
+
+@media (max-width: 768px) {
+    .gifsContainer {
+        column-width: 228px;
+    }
+}
+
+@media (max-width: 526px) {
+    .gifsContainer {
+        column-width: 147px;
+    }
+}
