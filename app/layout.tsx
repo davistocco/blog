@@ -1,10 +1,7 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import Footer from '@/components/footer/component'
-import { IBM_Plex_Mono } from 'next/font/google';
-import { Analytics } from '@vercel/analytics/react';
-
-const font = IBM_Plex_Mono({ weight: ['400', '500', '700'], subsets: ['latin'] });
+import { Analytics } from '@vercel/analytics/react'
 
 export const metadata: Metadata = {
   title: {
@@ -24,13 +21,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${font.className} antialiased`}>
+      <body className="antialiased">
         <div className='wrapper'>
           {children}
           <Footer />
           <Analytics />
         </div>
       </body>
-    </html >
+    </html>
   )
 }

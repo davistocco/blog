@@ -1,3 +1,11 @@
+/* globals.css */
+@font-face {
+  font-family: 'Comic Shanns';
+  src: url('/fonts/comic-shanns.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 :root {
   --background-primary: #222831;
   --accent-color: #00ADB5;
@@ -5,7 +13,7 @@
 }
 
 * {
-  font-family: var(--font-mono);
+  font-family: 'Comic Mono', sans-serif;
   box-sizing: border-box;
 }
 
