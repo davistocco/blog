@@ -5,8 +5,7 @@ export default function Menu() {
     return (
         <div className={styles.menu}>
             <div id="links">
-                <Link href='/'>Intro</Link>&nbsp;
-                <Link href='/posts'>Posts</Link>&nbsp;
+                <Link href='/'>davistocco.com</Link>&nbsp;
             </div>
         </div>
     )

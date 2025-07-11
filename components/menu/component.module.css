@@ -10,3 +10,7 @@
 .menu div {
     margin-top: 20px;
 }
+
+.menu a {
+    text-decoration: underline;
+}

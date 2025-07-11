@@ -6,7 +6,7 @@ export default function NotFound() {
         <div style={{ textAlign: 'center' }}>
             <h2>404</h2>
             <p>Post não encontrado</p>
-            <Link href='/posts'>
+            <Link href='/'>
                 <Image
                     src='/images/not-found.gif'
                     layout='fill'
