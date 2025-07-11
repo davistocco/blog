@@ -11,8 +11,8 @@ export default function Footer() {
                 <Image
                     className={styles.profileImage}
                     src='/images/very-young-davi.png'
-                    width='80'
-                    height='80'
+                    width='75'
+                    height='75'
                     alt='very young davi'
                 />
                 <ul>
