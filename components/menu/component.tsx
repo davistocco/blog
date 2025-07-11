@@ -7,9 +7,6 @@ export default function Menu() {
             <div id="links">
                 <Link href='/'>Intro</Link>&nbsp;
                 <Link href='/posts'>Posts</Link>&nbsp;
-                <Link href="/projects">Projetos</Link>&nbsp;
-                <Link href="/gifs">Gifs</Link>&nbsp;
-                <Link href="/contact">Contato</Link>&nbsp;
             </div>
         </div>
     )
