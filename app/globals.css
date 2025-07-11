@@ -19,31 +19,31 @@
 
 /* #region fonts */
 html {
-  font-size: clamp(14px, 1vw, 18px);
+  font-size: clamp(16px, 1vw, 18px);
 }
 
 h1 {
-  font-size: 2rem;
+  font-size: 2rem; /* 32px a 36px */
 }
 
 h2 {
-  font-size: 1.5rem;
+  font-size: 1.5rem; /* 24px a 27px */
 }
 
 h3 {
-  font-size: 1.25rem;
+  font-size: 1.25rem; /* 20px a 22px */
 }
 
 h4 {
-  font-size: 1.125rem;
+  font-size: 1.125rem; /* 18px a 20px */
 }
 
 h5 {
-  font-size: 1rem;
+  font-size: 1rem; /* 16px a 18px */
 }
 
 h6 {
-  font-size: 0.875rem;
+  font-size: 0.875rem; /* 14px a 16px */
 }
 
 a,
@@ -52,24 +52,27 @@ ul,
 ol,
 pre,
 table {
-  font-size: 1rem;
+  font-size: 1.125rem; /* 18px base */
+  line-height: 1.6;
+  letter-spacing: 0.2px;
 }
 
 blockquote {
-  font-size: 1.125rem;
+  font-size: 1.25rem; /* 20px */
+  line-height: 1.6;
 }
 
 code {
-  font-size: 0.95rem;
+  font-size: 1rem; /* 16px */
 }
 
 small {
-  font-size: 0.875rem;
+  font-size: 0.875rem; /* 14px */
 }
 
 @media (min-width: 768px) {
   html {
-    font-size: 16px;
+    font-size: 17px;
   }
 }
 
@@ -78,7 +81,6 @@ small {
     font-size: 18px;
   }
 }
-
 /* #endregion fonts */
 
 ul {
