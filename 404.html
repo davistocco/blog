@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>404 | Davi Stocco</title>
+  <link rel="icon" href="favicon.ico" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="wrapper">
+    <main>
+      <header>
+        <nav class="menu">
+          <div id="links">
+            <a href="index.html">davistocco.com</a>&nbsp;
+          </div>
+        </nav>
+      </header>
+
+      <div class="not-found">
+        <h2>404</h2>
+        <p>Página não encontrada</p>
+        <a href="index.html">
+          <img src="images/not-found.gif" alt="confused travolta" />
+        </a>
+      </div>
+    </main>
+
+    <footer>
+      <div class="flex center">
+        <img
+          class="profile-image"
+          src="images/very-young-davi.png"
+          alt="very young davi"
+        />
+        <ul>
+          <li><b><a href="mailto:davistocco14@gmail.com">&gt;mail</a></b></li>
+          <li><a href="https://linkedin.com/in/davistocco">linkedin</a></li>
+          <li><a href="https://github.com/davistocco">github</a></li>
+        </ul>
+      </div>
+      <p id="footer-years"></p>
+      <p>by <a href="index.html">Davi Stocco</a></p>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('footer-years').textContent =
+      '2023-' + new Date().getFullYear();
+  </script>
+</body>
+</html>
