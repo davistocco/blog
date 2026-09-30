@@ -1,14 +1,15 @@
 ---
 import Base from '../layouts/Base.astro';
 import { ui } from '../lib/i18n';
+import { url } from '../lib/url';
 ---
 
 <Base title="404">
   <div class="not-found">
     <h2>404</h2>
     <p>{ui['pt-br'].notFound}</p>
-    <a href="/">
-      <img src="/images/not-found.gif" alt="confused travolta" />
+    <a href={url()}>
+      <img src={url('images/not-found.gif')} alt="confused travolta" />
     </a>
   </div>
 </Base>

@@ -4,6 +4,7 @@ import '@fontsource/ibm-plex-mono/400.css';
 import '@fontsource/ibm-plex-mono/500.css';
 import '../styles/global.css';
 import type { Lang } from '../lib/i18n';
+import { url } from '../lib/url';
 
 interface Props {
   title?: string;
@@ -21,7 +22,7 @@ const {
 
 const fullTitle = title ? `${title} | Davi Stocco` : 'Davi Stocco';
 const canonical = new URL(Astro.url.pathname, Astro.site);
-const image = new URL('/images/very-young-davi.png', Astro.site);
+const image = new URL(url('images/very-young-davi.png'), Astro.site);
 const year = new Date().getFullYear();
 ---
 
@@ -33,7 +34,7 @@ const year = new Date().getFullYear();
     <title>{fullTitle}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
-    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" href={url('favicon.ico')} />
     <meta name="theme-color" content="#222831" media="(prefers-color-scheme: dark)" />
     <meta name="theme-color" content="#F3F5F7" media="(prefers-color-scheme: light)" />
 
@@ -58,7 +59,7 @@ const year = new Date().getFullYear();
     <div class="wrapper">
       <main>
         <nav class="menu">
-          <a href="/">davistocco.com</a>
+          <a href={url()}>davistocco</a>
           <button class="theme-toggle" type="button" id="theme-toggle" aria-label="Mudar tema">
             <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true">
               <circle cx="12" cy="12" r="4" />
@@ -74,7 +75,7 @@ const year = new Date().getFullYear();
 
       <footer>
         <div class="footer-card">
-          <img class="profile-image" src="/images/very-young-davi.png" alt="very young davi" width="75" height="75" />
+          <img class="profile-image" src={url('images/very-young-davi.png')} alt="very young davi" width="75" height="75" />
           <ul>
             <li><b><a href="mailto:davistocco14@gmail.com">&gt;mail</a></b></li>
             <li><a href="https://linkedin.com/in/davistocco">linkedin</a></li>
@@ -82,7 +83,7 @@ const year = new Date().getFullYear();
           </ul>
         </div>
         <p>2023-{year}</p>
-        <p>by <a href="/">Davi Stocco</a></p>
+        <p>by <a href={url()}>Davi Stocco</a></p>
       </footer>
     </div>
 

@@ -18,7 +18,8 @@ const codeWindow = {
 };
 
 export default defineConfig({
-  site: 'https://davistocco.com',
+  site: 'https://davistocco.github.io',
+  base: '/blog',
   i18n: {
     defaultLocale: 'pt-br',
     locales: ['pt-br', 'en'],
