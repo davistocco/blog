@@ -1,5 +1,8 @@
-# Gerando Handlers com OpenAI Function Calling e NodeJS
-Criado: 10/01/2024 00:00
+---
+title: "Gerando Handlers com OpenAI Function Calling e NodeJS"
+createdAt: 2024-01-10T00:00:00-03:00
+tags: [técnico]
+---
 
 O que faremos? Em vez de interagir com uma interface específica da nossa aplicação, onde precisamos detalhar manualmente o caso de uso desejado e seus argumentos, vamos criar uma interface de linguagem natural para atingir o mesmo objetivo.
 

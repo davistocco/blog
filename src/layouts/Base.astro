@@ -1,0 +1,128 @@
+---
+import '@fontsource-variable/figtree';
+import '@fontsource/ibm-plex-mono/400.css';
+import '@fontsource/ibm-plex-mono/500.css';
+import '../styles/global.css';
+import type { Lang } from '../lib/i18n';
+
+interface Props {
+  title?: string;
+  description?: string;
+  type?: 'website' | 'article';
+  lang?: Lang;
+}
+
+const {
+  title,
+  description = 'Blog do Davi Stocco',
+  type = 'website',
+  lang = 'pt-br',
+} = Astro.props;
+
+const fullTitle = title ? `${title} | Davi Stocco` : 'Davi Stocco';
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const image = new URL('/images/very-young-davi.png', Astro.site);
+const year = new Date().getFullYear();
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="theme-color" content="#222831" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#F3F5F7" media="(prefers-color-scheme: light)" />
+
+    <meta property="og:type" content={type} />
+    <meta property="og:site_name" content="Davi Stocco" />
+    <meta property="og:title" content={title ?? 'Davi Stocco'} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={image} />
+    <meta property="og:locale" content={lang === 'en' ? 'en_US' : 'pt_BR'} />
+    <meta name="twitter:card" content="summary" />
+
+    <script is:inline>
+      // Runs before paint so a saved theme never flashes the other one.
+      try {
+        const saved = localStorage.getItem('theme');
+        if (saved === 'light' || saved === 'dark') document.documentElement.dataset.theme = saved;
+      } catch {}
+    </script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <main>
+        <nav class="menu">
+          <a href="/">davistocco.com</a>
+          <button class="theme-toggle" type="button" id="theme-toggle" aria-label="Mudar tema">
+            <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="4" />
+              <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
+            </svg>
+            <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+            </svg>
+          </button>
+        </nav>
+        <slot />
+      </main>
+
+      <footer>
+        <div class="footer-card">
+          <img class="profile-image" src="/images/very-young-davi.png" alt="very young davi" width="75" height="75" />
+          <ul>
+            <li><b><a href="mailto:davistocco14@gmail.com">&gt;mail</a></b></li>
+            <li><a href="https://linkedin.com/in/davistocco">linkedin</a></li>
+            <li><a href="https://github.com/davistocco">github</a></li>
+          </ul>
+        </div>
+        <p>2023-{year}</p>
+        <p>by <a href="/">Davi Stocco</a></p>
+      </footer>
+    </div>
+
+    <script is:inline>
+      (() => {
+        const root = document.documentElement;
+        const button = document.getElementById('theme-toggle');
+        const systemLight = matchMedia('(prefers-color-scheme: light)');
+        const current = () => root.dataset.theme ?? (systemLight.matches ? 'light' : 'dark');
+
+        const render = () => {
+          const next = current() === 'dark' ? 'claro' : 'escuro';
+          button.dataset.current = current();
+          button.setAttribute('aria-label', `Mudar para o tema ${next}`);
+          button.title = `Tema ${next}`;
+        };
+
+        button.addEventListener('click', () => {
+          root.dataset.theme = current() === 'dark' ? 'light' : 'dark';
+          try { localStorage.setItem('theme', root.dataset.theme); } catch {}
+          render();
+        });
+        systemLight.addEventListener('change', render);
+        render();
+      })();
+    </script>
+
+    <script is:inline>
+      document.querySelectorAll('.code-window .copy').forEach((button) => {
+        button.addEventListener('click', async () => {
+          const code = button.closest('.code-window').querySelector('pre').innerText;
+          try {
+            await navigator.clipboard.writeText(code);
+            button.textContent = 'copiado!';
+          } catch {
+            button.textContent = 'erro';
+          }
+          setTimeout(() => (button.textContent = 'copiar'), 1500);
+        });
+      });
+    </script>
+  </body>
+</html>

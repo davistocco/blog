@@ -1,5 +1,8 @@
-# Breve Relato de Um Pai
-Criado: 21/07/2024 22:47
+---
+title: "Breve Relato de Um Pai"
+createdAt: 2024-07-21T22:47:00-03:00
+tags: [pessoal]
+---
 
 Depois de 9 dias do nascimento dos gêmeos, recebi a notícia de que um deles teria que fazer uma cirurgia no intestino. Foi quando se iniciou a experiência mais transformadora da minha vida. Foram muitos altos e baixos, crises, esperanças e aprendizados. Mas depois de 6 meses e 3 cirurgias, o Tomas foi pra casa, "um milagre".
 

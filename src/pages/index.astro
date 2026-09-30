@@ -1,0 +1,25 @@
+---
+import Base from '../layouts/Base.astro';
+import Tags from '../components/Tags.astro';
+import { getPosts } from '../lib/posts';
+import { formatDate } from '../lib/i18n';
+
+const posts = await getPosts();
+---
+
+<Base>
+  <header>
+    <h1 class="site-title">Davi Stocco</h1>
+    <p class="caption">blog</p>
+  </header>
+
+  <ul class="posts">
+    {posts.map((post) => (
+      <li>
+        <span class="date">{formatDate(post.data.createdAt)}</span>
+        <a href={`/posts/${post.id}/`}>{post.data.title}</a>
+        <Tags tags={post.data.tags} />
+      </li>
+    ))}
+  </ul>
+</Base>

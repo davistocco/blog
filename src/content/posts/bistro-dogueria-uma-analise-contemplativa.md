@@ -1,5 +1,8 @@
-# Bistrô Dogueria - Uma Análise Contemplativa
-Criado: 03/01/2025 00:48
+---
+title: "Bistrô Dogueria - Uma Análise Contemplativa"
+createdAt: 2025-01-03T00:48:00-03:00
+tags: [contemplativo]
+---
 
 **Ribeirão Preto, 3 de janeiro de 2025.**  
 Ainda na ressaca de fim de ano, é madrugada, e estou sentado no meu sofá, horas depois de ter comido, mais uma vez, um cachorro-quente da Bistrô Dogueria. Enquanto reflito sobre o último ano e faço **planos para 2025**, tive um lapso de criatividade e resolvi despejá-lo aqui, falando **justamente** sobre isso: o **cachorro-quente da Bistrô Dogueria**.
