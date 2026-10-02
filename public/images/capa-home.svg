@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 600" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2f5d8a"/>
+      <stop offset="0.6" stop-color="#e9a77b"/>
+      <stop offset="1" stop-color="#f6d2a2"/>
+    </linearGradient>
+    <linearGradient id="lake" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e0a37e"/>
+      <stop offset="1" stop-color="#2f5d8a"/>
+    </linearGradient>
+  </defs>
+  <rect width="1400" height="420" fill="url(#sky)"/>
+  <circle cx="930" cy="330" r="62" fill="#fff1c9"/>
+  <path d="M0 420 L170 250 L270 340 L430 180 L610 360 L720 290 L900 420Z" fill="#5a6f8f"/>
+  <path d="M500 420 L700 270 L810 350 L990 210 L1170 340 L1280 280 L1400 360 V420Z" fill="#46597a"/>
+  <path d="M0 420 L120 340 L260 400 L380 330 L560 420Z" fill="#2f3f5c"/>
+  <path d="M800 420 L960 350 L1100 410 L1250 340 L1400 420Z" fill="#2f3f5c"/>
+  <rect y="420" width="1400" height="180" fill="url(#lake)"/>
+  <g stroke="#fff1c9" stroke-linecap="round" opacity="0.75">
+    <path d="M880 440 H980" stroke-width="5"/>
+    <path d="M860 460 H1000" stroke-width="4"/>
+    <path d="M890 482 H970" stroke-width="3"/>
+  </g>
+  <g fill="#1f2c44">
+    <path d="M60 600 V470 l-26 50 l16 0 l-22 45 h64 l-22 -45 l16 0z" transform="translate(0 -40)"/>
+    <path d="M1290 600 V460 l-30 55 l18 0 l-26 50 h76 l-26 -50 l18 0z" transform="translate(0 -30)"/>
+  </g>
+</svg>
