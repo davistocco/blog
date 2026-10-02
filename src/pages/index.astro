@@ -11,7 +11,7 @@ const posts = await getPosts();
 <Base>
   <PageTitle title="Posts" />
 
-  <ul class="posts">
+  <ul class="item-list">
     {posts.map((post) => (
       <li>
         <span class="date">{formatDate(post.data.createdAt)}</span>
