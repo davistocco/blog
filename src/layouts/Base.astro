@@ -9,8 +9,8 @@ import { url } from '../lib/url';
 import Cover from '../components/Cover.astro';
 
 interface Props {
-  // Per-page cover (path under public/); omit to use the site-wide one.
-  cover?: string;
+  // Per-page cover (path under public/); omit for the site-wide one, false for none.
+  cover?: string | false;
   coverAlt?: string;
   title?: string;
   description?: string;
@@ -92,7 +92,7 @@ const trail = [{ label: 'davistocco', href: url() }, ...crumbs];
             </svg>
           </button>
         </nav>
-        <Cover src={cover} alt={coverAlt} />
+        {cover !== false && <Cover src={cover} alt={coverAlt} />}
         <slot />
       </main>
 
