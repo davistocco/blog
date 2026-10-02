@@ -2,6 +2,8 @@
 title: "Bistrô Dogueria - Uma Análise Contemplativa"
 createdAt: 2025-01-03T00:48:00-03:00
 tags: [contemplativo]
+cover: images/capa-bistro.jpg
+coverAlt: "Cachorro-quente com mostarda e maionese em close (foto: Desi Min, Unsplash)"
 ---
 
 **Ribeirão Preto, 3 de janeiro de 2025.**  
