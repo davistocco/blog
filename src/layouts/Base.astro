@@ -125,14 +125,6 @@ const trail = [{ label: 'davistocco', href: url() }, ...crumbs];
     </script>
 
     <script is:inline>
-      // Header tint fades in over the first 300px of scroll.
-      const menu = document.querySelector('.menu');
-      const fade = () => menu.style.setProperty('--menu-fade', Math.min(scrollY / 300, 1));
-      addEventListener('scroll', fade, { passive: true });
-      fade();
-    </script>
-
-    <script is:inline>
       document.querySelectorAll('.code-window .copy').forEach((button) => {
         button.addEventListener('click', async () => {
           const code = button.closest('.code-window').querySelector('pre').innerText;

@@ -91,12 +91,10 @@ img { max-width: 100%; }
 .wrapper > main { flex: 1; }
 
 /* ── Header ────────────────────────────────────────────────── */
-/* Sticky keeps the bar in the flow (no offset needed) while it stays pinned to the top.
-   The padding lives here, not on body, so the bar covers the scrolling text right up to the edge. */
+/* Not pinned for now. To pin it again: position: sticky; top: 0; z-index: 10; and restore the
+   scroll-fade script in Base.astro (git history has it). */
 .menu {
-  position: sticky;
-  top: 0;
-  z-index: 10;
+  position: relative;
   padding: 12px 0;
   display: flex;
   justify-content: space-between;
@@ -105,7 +103,7 @@ img { max-width: 100%; }
 }
 
 /* Tinted glass layer, full viewport width (the bar itself is only as wide as the column).
-   Its opacity follows the scroll (--menu-fade, set by the script in Base.astro). */
+   Its opacity can follow the scroll through --menu-fade (unset = hidden: the plain top-of-page look). */
 .menu::before {
   content: '';
   position: absolute;
@@ -115,7 +113,7 @@ img { max-width: 100%; }
   left: 50%;
   width: 100vw;
   transform: translateX(-50%);
-  opacity: var(--menu-fade, 1);
+  opacity: var(--menu-fade, 0);
   background: linear-gradient(
     60deg,
     light-dark(var(--code-bar), rgb(30 30 30)),
