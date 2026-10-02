@@ -1,6 +1,5 @@
 ---
 import Base from '../layouts/Base.astro';
-import Tags from '../components/Tags.astro';
 import { getPosts } from '../lib/posts';
 import { formatDate } from '../lib/i18n';
 import { url } from '../lib/url';
@@ -11,7 +10,10 @@ const posts = await getPosts();
 <Base>
   <header>
     <h1 class="site-title">Davi Stocco</h1>
-    <p class="caption">blog</p>
+    <p class="intro">
+      Reflexões sobre a vida, a fé e o que a gente aprende sem perceber.
+      Histórias pequenas, com mais perguntas do que respostas.
+    </p>
   </header>
 
   <ul class="posts">
@@ -19,7 +21,6 @@ const posts = await getPosts();
       <li>
         <span class="date">{formatDate(post.data.createdAt)}</span>
         <a href={url(`posts/${post.id}/`)}>{post.data.title}</a>
-        <Tags tags={post.data.tags} />
       </li>
     ))}
   </ul>

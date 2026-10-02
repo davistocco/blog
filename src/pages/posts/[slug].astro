@@ -1,12 +1,12 @@
 ---
 import { render } from 'astro:content';
 import Base from '../../layouts/Base.astro';
-import Tags from '../../components/Tags.astro';
-import { getPosts, readingTime, description, type Post } from '../../lib/posts';
+import { getAllPosts, getPosts, readNext, readingTime, description, type Post } from '../../lib/posts';
 import { formatDateTime, ui } from '../../lib/i18n';
+import { url } from '../../lib/url';
 
 export async function getStaticPaths() {
-  const posts = await getPosts();
+  const posts = await getAllPosts();
   return posts.map((post) => ({ params: { slug: post.id }, props: { post } }));
 }
 
@@ -14,6 +14,7 @@ const { post } = Astro.props as { post: Post };
 const { Content } = await render(post);
 const { lang } = post.data;
 const t = ui[lang];
+const next = readNext(post, await getPosts());
 ---
 
 <Base title={post.data.title} description={description(post)} type="article" lang={lang}>
@@ -21,11 +22,16 @@ const t = ui[lang];
     <h1>{post.data.title}</h1>
     <div class="meta">
       <span class="date">{t.created}: {formatDateTime(post.data.createdAt, lang)} · {t.readingTime(readingTime(post))}</span>
-      <Tags tags={post.data.tags} />
     </div>
   </header>
 
   <article class="post-content">
     <Content />
   </article>
+
+  {next && (
+    <p class="read-next">
+      {t.readNext}: <a href={url(`posts/${next.id}/`)}>{next.data.title}</a>
+    </p>
+  )}
 </Base>

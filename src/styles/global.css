@@ -138,10 +138,15 @@ img { max-width: 100%; }
 
 .site-title { margin: 2rem 0 0; }
 
-.caption {
-  font-size: var(--text-xs);
+.intro {
   color: var(--muted);
-  margin: 0 0 2.5rem;
+  margin: 0.5rem 0 2.5rem;
+}
+
+.read-next {
+  margin-top: 3rem;
+  font-size: var(--text-sm);
+  color: var(--muted);
 }
 
 /* ── Post list ─────────────────────────────────────────────── */
@@ -167,13 +172,6 @@ img { max-width: 100%; }
 }
 
 .posts a { font-weight: 500; }
-
-.tags {
-  display: inline-flex;
-  gap: 0.5rem;
-  font-size: var(--text-xs);
-  color: var(--muted);
-}
 
 /* ── Post page ─────────────────────────────────────────────── */
 /* Vertical rhythm follows Tailwind Typography's base prose */
