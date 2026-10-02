@@ -168,6 +168,7 @@ img { max-width: 100%; }
 }
 
 .item-list li {
+  line-height: 1.35;
   display: flex;
   flex-wrap: wrap;
   align-items: baseline;
@@ -185,7 +186,7 @@ img { max-width: 100%; }
 .item-list.bulleted li { display: list-item; }
 .item-list.bulleted li::marker { color: var(--muted); }
 
-.item-list a { color: var(--strong); font-weight: 500; font-size: var(--text-base); line-height: 1.35; }
+.item-list a { color: var(--strong); font-weight: 500; font-size: var(--text-base); }
 .item-list a:hover { color: var(--accent); }
 
 /* ── Tools ─────────────────────────────────────────────────── */
