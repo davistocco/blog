@@ -1,6 +1,7 @@
 ---
 import { render } from 'astro:content';
 import Base from '../../layouts/Base.astro';
+import PageTitle from '../../components/PageTitle.astro';
 import { getAllPosts, getPosts, readNext, readingTime, description, type Post } from '../../lib/posts';
 import { formatDateTime, ui } from '../../lib/i18n';
 import { url } from '../../lib/url';
@@ -18,12 +19,11 @@ const next = readNext(post, await getPosts());
 ---
 
 <Base title={post.data.title} description={description(post)} type="article" lang={lang}>
-  <header class="post-header">
-    <h1>{post.data.title}</h1>
+  <PageTitle title={post.data.title}>
     <div class="meta">
       <span class="date">{t.created}: {formatDateTime(post.data.createdAt, lang)} · {t.readingTime(readingTime(post))}</span>
     </div>
-  </header>
+  </PageTitle>
 
   <article class="post-content">
     <Content />

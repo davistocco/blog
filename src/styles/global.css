@@ -37,11 +37,11 @@
 /* ── Base ──────────────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; }
 
-html { overflow-y: scroll; }
+html { overflow-y: scroll; scroll-padding-top: 4rem; }
 
 body {
   margin: 0;
-  padding: 20px 16px;
+  padding: 0 16px 20px;
   min-height: 100vh;
   min-height: 100dvh;
   display: flex;
@@ -91,7 +91,14 @@ img { max-width: 100%; }
 .wrapper > main { flex: 1; }
 
 /* ── Header ────────────────────────────────────────────────── */
+/* Sticky keeps the bar in the flow (no offset needed) while it stays pinned to the top.
+   The padding lives here, not on body, so the bar covers the scrolling text right up to the edge. */
 .menu {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  padding: 12px 0;
+  background: var(--bg);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -140,7 +147,10 @@ img { max-width: 100%; }
 .crumbs { display: flex; flex-wrap: wrap; list-style: none; margin: 0; padding: 0; }
 .crumbs li + li::before { content: '/'; margin: 0 0.5rem; color: var(--muted); font-weight: normal; }
 
-.site-title { margin-bottom: 2.5rem; }
+/* Every page title block (home, post, tool) leaves the same gap before its content */
+.page-title { margin-bottom: 2.5rem; }
+.page-title h1 { margin-bottom: 0; }
+.page-title .meta { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 0.75rem; margin-top: 0.75rem; }
 
 .read-next {
   margin-top: 3rem;
@@ -178,6 +188,7 @@ img { max-width: 100%; }
 .tools a { color: var(--strong); font-weight: 500; }
 .tools a:hover { color: var(--accent); }
 
+.tool h2:first-child { margin-top: 0; }
 .tool h2 { margin: 2rem 0 0.75rem; font-size: var(--text-xl); }
 .tool-form { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem 1.25rem; }
 .tool-form label { display: inline-flex; align-items: center; gap: 0.5rem; font-size: var(--text-sm); }
@@ -242,8 +253,6 @@ img { max-width: 100%; }
 
 /* ── Post page ─────────────────────────────────────────────── */
 /* Vertical rhythm follows Tailwind Typography's base prose */
-.post-header .meta { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 0.75rem; margin: 0 0 2.5rem; }
-
 .post-content p { margin: 1.25em 0; }
 .post-content > :first-child { margin-top: 0; }
 .post-content h2 { margin: 2em 0 0.75em; line-height: 1.3; }

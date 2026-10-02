@@ -1,12 +1,11 @@
 ---
 import Base from '../../layouts/Base.astro';
+import PageTitle from '../../components/PageTitle.astro';
 import { url } from '../../lib/url';
 ---
 
-<Base section="tools" crumbs={[{ label: 'tools', href: url('tools/') }, { label: 'cpf' }]} title="Gerador e validador de CPF" description="Gere CPFs válidos para teste (com ou sem máscara) e valide qualquer CPF. Roda no navegador.">
-  <header class="post-header">
-    <h1>Gerador e validador de CPF</h1>
-  </header>
+<Base crumbs={[{ label: 'tools', href: url('tools/') }, { label: 'cpf' }]} title="Gerador e validador de CPF" description="Gere CPFs válidos para teste (com ou sem máscara) e valide qualquer CPF. Roda no navegador.">
+  <PageTitle title="Gerador e validador de CPF" />
 
   <section class="tool">
     <h2>Gerar</h2>

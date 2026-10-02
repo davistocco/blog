@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import PageTitle from '../../components/PageTitle.astro';
 import { url } from '../../lib/url';
 
 const tools = [
@@ -8,10 +9,8 @@ const tools = [
 ];
 ---
 
-<Base section="tools" crumbs={[{ label: 'tools' }]} title="Tools" description="Ferramentas que funcionam no navegador: gerador e validador de CPF, gerador de senha.">
-  <header class="post-header">
-    <h1>Tools</h1>
-  </header>
+<Base crumbs={[{ label: 'tools' }]} title="Tools" description="Ferramentas que funcionam no navegador: gerador e validador de CPF, gerador de senha.">
+  <PageTitle title="Tools" />
 
   <ul class="tools">
     {tools.map((tool) => (

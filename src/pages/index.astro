@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import PageTitle from '../components/PageTitle.astro';
 import { getPosts } from '../lib/posts';
 import { formatDate } from '../lib/i18n';
 import { url } from '../lib/url';
@@ -8,9 +9,7 @@ const posts = await getPosts();
 ---
 
 <Base>
-  <header>
-    <h1 class="site-title">Davi Stocco</h1>
-  </header>
+  <PageTitle title="Posts" />
 
   <ul class="posts">
     {posts.map((post) => (

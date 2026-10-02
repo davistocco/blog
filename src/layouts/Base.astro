@@ -12,10 +12,8 @@ interface Props {
   description?: string;
   type?: 'website' | 'article';
   lang?: Lang;
-  // Trail after "blog"; the last item is the current page (no href).
+  // Trail after the site name; the last item is the current page (no href).
   crumbs?: { label: string; href?: string }[];
-  // Pages outside the blog section (tools) start their own trail instead of "blog".
-  section?: 'blog' | 'tools';
 }
 
 const {
@@ -24,7 +22,6 @@ const {
   type = 'website',
   lang = 'pt-br',
   crumbs = [],
-  section = 'blog',
 } = Astro.props;
 
 const fullTitle = title ? `${title} | Davi Stocco` : 'Davi Stocco';
@@ -32,7 +29,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
 const image = new URL(url('images/very-young-davi.png'), Astro.site);
 const year = new Date().getFullYear();
 const isHome = Astro.url.pathname.replace(/\/$/, '') === url().replace(/\/$/, '');
-const trail = section === 'tools' ? crumbs : [{ label: 'blog', href: url() }, ...crumbs];
+const trail = [{ label: 'davistocco', href: url() }, ...crumbs];
 ---
 
 <!doctype html>
