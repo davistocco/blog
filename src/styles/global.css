@@ -167,7 +167,7 @@ img { max-width: 100%; }
 /* Every page title block (home, post, tool) leaves the same gap before its content */
 /* Cover: wide rectangle between the menu and the page title. */
 .cover {
-  aspect-ratio: 21 / 9;
+  aspect-ratio: 3 / 1;
   margin-top: 1.5rem;
   background: var(--code-bar);
   border: 1px solid var(--line);
