@@ -170,7 +170,6 @@ img { max-width: 100%; }
   aspect-ratio: 4 / 1;
   margin-top: 1.5rem;
   background: var(--code-bar);
-  border: 1px solid var(--line);
   border-radius: 4px;
   overflow: hidden;
 }
