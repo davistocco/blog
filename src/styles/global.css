@@ -165,6 +165,17 @@ img { max-width: 100%; }
 .crumbs li + li::before { content: '/'; margin: 0 0.5rem; color: var(--muted); font-weight: normal; }
 
 /* Every page title block (home, post, tool) leaves the same gap before its content */
+/* Cover: wide rectangle between the menu and the page title. */
+.cover {
+  aspect-ratio: 21 / 9;
+  margin-top: 1.5rem;
+  background: var(--code-bar);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.cover img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
 .page-title { margin-bottom: 2.5rem; }
 .page-title h1 { margin-bottom: 0; }
 .page-title .meta { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 0.75rem; margin-top: 0.75rem; }

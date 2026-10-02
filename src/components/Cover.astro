@@ -1,0 +1,13 @@
+---
+interface Props {
+  // Image path under public/. Without it, a plain placeholder keeps the layout visible.
+  src?: string;
+  alt?: string;
+}
+
+const { src, alt = '' } = Astro.props;
+---
+
+<div class="cover">
+  {src && <img src={src} alt={alt} loading="eager" />}
+</div>

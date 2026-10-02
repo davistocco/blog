@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import Cover from '../components/Cover.astro';
 import PageTitle from '../components/PageTitle.astro';
 import { getPosts } from '../lib/posts';
 import { formatDate } from '../lib/i18n';
@@ -9,6 +10,7 @@ const posts = await getPosts();
 ---
 
 <Base>
+  <Cover />
   <PageTitle title="Posts" />
 
   <ul class="item-list">
