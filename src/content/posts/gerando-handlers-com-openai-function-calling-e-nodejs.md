@@ -3,7 +3,7 @@ title: "Gerando Handlers com OpenAI Function Calling e NodeJS"
 createdAt: 2024-01-10T00:00:00-03:00
 tags: [técnico]
 cover: images/capa-function-calling.jpg
-coverAlt: "Ondas luminosas azuis sobre fundo escuro (foto: Angelo Abear, Unsplash)"
+coverAlt: "Cinco robôs de lata antigos enfileirados (foto: Eric Krull, Unsplash)"
 ---
 
 O que faremos? Em vez de interagir com uma interface específica da nossa aplicação, onde precisamos detalhar manualmente o caso de uso desejado e seus argumentos, vamos criar uma interface de linguagem natural para atingir o mesmo objetivo.
