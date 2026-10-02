@@ -10,6 +10,9 @@ const posts = defineCollection({
     tags: z.array(z.string()).default([]),
     lang: z.enum(['pt-br', 'en']).default('pt-br'),
     description: z.string().optional(),
+    // Path under public/ (e.g. images/capa.jpg); omit to use the site-wide cover.
+    cover: z.string().optional(),
+    coverAlt: z.string().optional(),
     unlisted: z.boolean().default(false),
   }),
 });

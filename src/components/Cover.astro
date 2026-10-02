@@ -1,13 +1,18 @@
 ---
+import { url } from '../lib/url';
+
 interface Props {
-  // Image path under public/. Without it, a plain placeholder keeps the layout visible.
+  // Path under public/ (e.g. 'images/capa.jpg'); falls back to the site-wide cover.
   src?: string;
   alt?: string;
 }
 
-const { src, alt = '' } = Astro.props;
+const {
+  src = 'images/capa-home.svg',
+  alt = 'Paisagem com montanhas e um lago ao pôr do sol',
+} = Astro.props;
 ---
 
 <div class="cover">
-  {src && <img src={src} alt={alt} loading="eager" />}
+  <img src={url(src)} alt={alt} loading="eager" />
 </div>

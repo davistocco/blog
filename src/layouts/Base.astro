@@ -6,8 +6,12 @@ import '../styles/global.css';
 import type { Lang } from '../lib/i18n';
 import figtreeLatin from '@fontsource-variable/figtree/files/figtree-latin-wght-normal.woff2?url';
 import { url } from '../lib/url';
+import Cover from '../components/Cover.astro';
 
 interface Props {
+  // Per-page cover (path under public/); omit to use the site-wide one.
+  cover?: string;
+  coverAlt?: string;
   title?: string;
   description?: string;
   type?: 'website' | 'article';
@@ -22,6 +26,8 @@ const {
   type = 'website',
   lang = 'pt-br',
   crumbs = [],
+  cover,
+  coverAlt,
 } = Astro.props;
 
 const fullTitle = title ? `${title} | Davi Stocco` : 'Davi Stocco';
@@ -86,6 +92,7 @@ const trail = [{ label: 'davistocco', href: url() }, ...crumbs];
             </svg>
           </button>
         </nav>
+        <Cover src={cover} alt={coverAlt} />
         <slot />
       </main>
 

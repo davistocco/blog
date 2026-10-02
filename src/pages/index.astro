@@ -1,6 +1,5 @@
 ---
 import Base from '../layouts/Base.astro';
-import Cover from '../components/Cover.astro';
 import PageTitle from '../components/PageTitle.astro';
 import { getPosts } from '../lib/posts';
 import { formatDate } from '../lib/i18n';
@@ -10,7 +9,6 @@ const posts = await getPosts();
 ---
 
 <Base>
-  <Cover src={url('images/capa-home.svg')} alt="Paisagem com montanhas e um lago ao pôr do sol" />
   <PageTitle title="Posts" />
 
   <ul class="item-list">

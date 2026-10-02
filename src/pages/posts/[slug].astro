@@ -18,7 +18,7 @@ const t = ui[lang];
 const next = readNext(post, await getPosts());
 ---
 
-<Base title={post.data.title} description={description(post)} type="article" lang={lang}>
+<Base title={post.data.title} description={description(post)} type="article" lang={lang} cover={post.data.cover} coverAlt={post.data.coverAlt}>
   <PageTitle title={post.data.title}>
     <div class="meta">
       <span class="date">{t.created}: {formatDateTime(post.data.createdAt, lang)} · {t.readingTime(readingTime(post))}</span>
