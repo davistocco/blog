@@ -191,16 +191,20 @@ img { max-width: 100%; }
   padding: 0;
   margin: 0;
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: 1.25rem;
 }
 
 .item-list li {
   line-height: 1.35;
   display: flex;
-  flex-wrap: wrap;
   align-items: baseline;
   gap: 0 0.75rem;
 }
+
+/* Date stays beside the title; a long title is cut with an ellipsis instead of wrapping below */
+.item-list .date { flex-shrink: 0; }
+.item-list a { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 
 .date {
   font-size: var(--text-sm);
