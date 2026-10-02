@@ -4,6 +4,7 @@ import '@fontsource/ibm-plex-mono/400.css';
 import '@fontsource/ibm-plex-mono/500.css';
 import '../styles/global.css';
 import type { Lang } from '../lib/i18n';
+import figtreeLatin from '@fontsource-variable/figtree/files/figtree-latin-wght-normal.woff2?url';
 import { url } from '../lib/url';
 
 interface Props {
@@ -11,6 +12,10 @@ interface Props {
   description?: string;
   type?: 'website' | 'article';
   lang?: Lang;
+  // Trail after "blog"; the last item is the current page (no href).
+  crumbs?: { label: string; href?: string }[];
+  // Pages outside the blog section (tools) start their own trail instead of "blog".
+  section?: 'blog' | 'tools';
 }
 
 const {
@@ -18,12 +23,16 @@ const {
   description = 'Blog do Davi Stocco',
   type = 'website',
   lang = 'pt-br',
+  crumbs = [],
+  section = 'blog',
 } = Astro.props;
 
 const fullTitle = title ? `${title} | Davi Stocco` : 'Davi Stocco';
 const canonical = new URL(Astro.url.pathname, Astro.site);
 const image = new URL(url('images/very-young-davi.png'), Astro.site);
 const year = new Date().getFullYear();
+const isHome = Astro.url.pathname.replace(/\/$/, '') === url().replace(/\/$/, '');
+const trail = section === 'tools' ? crumbs : [{ label: 'blog', href: url() }, ...crumbs];
 ---
 
 <!doctype html>
@@ -33,11 +42,12 @@ const year = new Date().getFullYear();
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{fullTitle}</title>
     <meta name="description" content={description} />
+    <link rel="preload" href={figtreeLatin} as="font" type="font/woff2" crossorigin />
     <link rel="canonical" href={canonical} />
     <link rel="icon" href={url('favicon.ico')} />
     <link rel="alternate" type="application/rss+xml" title="Davi Stocco" href={url('rss.xml')} />
-    <meta name="theme-color" content="#222831" media="(prefers-color-scheme: dark)" />
-    <meta name="theme-color" content="#F3F5F7" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#121212" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)" />
 
     <meta property="og:type" content={type} />
     <meta property="og:site_name" content="Davi Stocco" />
@@ -60,7 +70,15 @@ const year = new Date().getFullYear();
     <div class="wrapper">
       <main>
         <nav class="menu">
-          <a href={url()}>davistocco</a>
+          <ol class="crumbs" aria-label="Breadcrumb">
+            {trail.map((crumb, i) => (
+              <li>
+                {crumb.href && !(i === trail.length - 1 && (i > 0 || isHome))
+                  ? <a href={crumb.href}>{crumb.label}</a>
+                  : <span aria-current="page">{crumb.label}</span>}
+              </li>
+            ))}
+          </ol>
           <button class="theme-toggle" type="button" id="theme-toggle" aria-label="Mudar tema">
             <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true">
               <circle cx="12" cy="12" r="4" />
@@ -75,17 +93,13 @@ const year = new Date().getFullYear();
       </main>
 
       <footer>
-        <div class="footer-card">
-          <img class="profile-image" src={url('images/very-young-davi.png')} alt="very young davi" width="75" height="75" />
-          <ul>
-            <li><b><a href="mailto:davistocco14@gmail.com">&gt;mail</a></b></li>
-            <li><a href="https://linkedin.com/in/davistocco">linkedin</a></li>
-            <li><a href="https://github.com/davistocco">github</a></li>
-            <li><a href={url('rss.xml')}>rss</a></li>
-          </ul>
-        </div>
-        <p>2023-{year}</p>
-        <p>by <a href={url()}>Davi Stocco</a></p>
+        <p>© 2023–{year} <a href={url()}>Davi Stocco</a></p>
+        <ul>
+          <li><a href={url('tools/')}>tools</a></li>
+          <li><a href={url('rss.xml')}>rss</a></li>
+          <li><a href="https://linkedin.com/in/davistocco">linkedin</a></li>
+          <li><a href="https://github.com/davistocco">github</a></li>
+        </ul>
       </footer>
     </div>
 

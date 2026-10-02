@@ -1,0 +1,21 @@
+---
+import Base from '../../layouts/Base.astro';
+import { url } from '../../lib/url';
+
+const tools = [
+  { slug: 'cpf', name: 'Gerador e validador de CPF' },
+  { slug: 'password', name: 'Gerador de senha' },
+];
+---
+
+<Base section="tools" crumbs={[{ label: 'tools' }]} title="Tools" description="Ferramentas que funcionam no navegador: gerador e validador de CPF, gerador de senha.">
+  <header class="post-header">
+    <h1>Tools</h1>
+  </header>
+
+  <ul class="tools">
+    {tools.map((tool) => (
+      <li><a href={url(`tools/${tool.slug}/`)}>{tool.name}</a></li>
+    ))}
+  </ul>
+</Base>

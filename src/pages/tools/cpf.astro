@@ -1,0 +1,70 @@
+---
+import Base from '../../layouts/Base.astro';
+import { url } from '../../lib/url';
+---
+
+<Base section="tools" crumbs={[{ label: 'tools', href: url('tools/') }, { label: 'cpf' }]} title="Gerador e validador de CPF" description="Gere CPFs válidos para teste (com ou sem máscara) e valide qualquer CPF. Roda no navegador.">
+  <header class="post-header">
+    <h1>Gerador e validador de CPF</h1>
+  </header>
+
+  <section class="tool">
+    <h2>Gerar</h2>
+    <form id="gen" class="tool-form">
+      <label><input type="checkbox" id="masked" checked /> Com máscara</label>
+      <button type="submit">Gerar</button>
+    </form>
+    <div class="tool-field">
+      <input type="text" id="result" class="tool-input" readonly aria-label="CPF gerado" />
+      <button type="button" id="copy" class="copy">copiar</button>
+    </div>
+  </section>
+
+  <section class="tool">
+    <h2>Validar</h2>
+    <input type="text" id="check" class="tool-input" placeholder="000.000.000-00" autocomplete="off" inputmode="numeric" aria-label="CPF para validar" />
+    <p class="tool-status" id="status" aria-live="polite"></p>
+  </section>
+
+  <script>
+    import { generateCpf, validateCpf } from '../../lib/cpf';
+
+    const $ = <T extends HTMLElement>(id: string) => document.getElementById(id) as T;
+    const result = $<HTMLInputElement>('result');
+    const copy = $<HTMLButtonElement>('copy');
+
+    const generate = () => {
+      const masked = $<HTMLInputElement>('masked').checked;
+      result.value = generateCpf({ masked });
+      copy.textContent = 'copiar';
+    };
+
+    $('gen').addEventListener('submit', (e) => { e.preventDefault(); generate(); });
+    copy.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(result.value);
+        copy.textContent = 'copiado!';
+      } catch {
+        copy.textContent = 'erro';
+      }
+    });
+
+    const reasons = {
+      length: 'tamanho errado (um CPF tem 11 dígitos)',
+      chars: 'contém caracteres que não são dígitos',
+      repeated: 'todos os dígitos são iguais',
+      digit: 'dígitos verificadores não conferem',
+    };
+    const status = $<HTMLParagraphElement>('status');
+    $<HTMLInputElement>('check').addEventListener('input', (e) => {
+      const value = (e.target as HTMLInputElement).value.trim();
+      status.className = 'tool-status';
+      if (!value) { status.textContent = ''; return; }
+      const r = validateCpf(value);
+      status.textContent = r.valid ? 'Válido' : `Inválido: ${reasons[r.reason]}`;
+      status.classList.add(r.valid ? 'ok' : 'bad');
+    });
+
+    generate();
+  </script>
+</Base>
