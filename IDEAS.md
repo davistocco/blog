@@ -12,9 +12,6 @@ Direção atual (02/10/2026): blog centrado no leitor. Conteúdo atemporal, refl
 ## Conteúdo
 - Versões em inglês dos posts (a estrutura bilíngue já está preparada).
 
-## Visual
-- Voltar com uma fonte de personalidade nos títulos (a Comic Shanns saiu em 30/09/2026; por enquanto é Figtree em tudo).
-
 ## Talvez um dia (consequência, não objetivo)
 - Página "sobre" curta, mantendo o tom informal.
 - Seção de projetos / vitrine profissional.
