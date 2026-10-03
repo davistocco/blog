@@ -12,7 +12,7 @@ const tools = [
 <Base cover={false} crumbs={[{ label: 'tools' }]} title="Tools" description="Ferramentas que funcionam no navegador: gerador e validador de CPF, gerador de senha.">
   <PageTitle title="Tools" />
 
-  <ul class="item-list bulleted">
+  <ul class="item-list">
     {tools.map((tool) => (
       <li><a href={url(`tools/${tool.slug}/`)}>{tool.name}</a></li>
     ))}
