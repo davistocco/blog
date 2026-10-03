@@ -31,7 +31,8 @@ const next = readNext(post, await getPosts());
 
   {next && (
     <p class="read-next">
-      {t.readNext}: <a href={url(`posts/${next.id}/`)}>{next.data.title}</a>
+      <span class="label">{t.readNext}</span>
+      <a href={url(`posts/${next.id}/`)}>{next.data.title}</a>
     </p>
   )}
 </Base>
