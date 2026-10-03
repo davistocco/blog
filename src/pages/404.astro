@@ -8,8 +8,9 @@ import { url } from '../lib/url';
   <div class="not-found">
     <h1>404</h1>
     <p>{ui['pt-br'].notFound}</p>
-    <a href={url()}>
-      <img src={url('images/not-found.gif')} alt="confused travolta" />
+    <a href={url()}>{ui['pt-br'].seePosts}</a>
+    <a href={url()} tabindex="-1" aria-hidden="true">
+      <img src={url('images/not-found.gif')} alt="" />
     </a>
   </div>
 </Base>

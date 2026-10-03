@@ -5,13 +5,15 @@ export const ui = {
     created: 'Criado',
     readNext: 'Continue lendo',
     readingTime: (min: number) => `~${min} min`,
-    notFound: 'Página não encontrada',
+    notFound: 'Esta página não existe ou mudou de endereço.',
+    seePosts: 'Ver os posts',
   },
   en: {
     created: 'Created',
     readNext: 'Keep reading',
     readingTime: (min: number) => `~${min} min read`,
-    notFound: 'Page not found',
+    notFound: "This page doesn't exist or has moved.",
+    seePosts: 'See the posts',
   },
 } as const;
 
